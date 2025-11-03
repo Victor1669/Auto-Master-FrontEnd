@@ -1,0 +1,5 @@
+.content {
+  height: inherit;
+
+  display: flex;
+}

@@ -4,17 +4,28 @@
 ├── 📁 public
 ├── 📁 src
 │   ├── 📁 Components
+│   │   ├── 📁 TabBar
+│   │   │   ├── 📄 TabBar.jsx
+│   │   │   └── 🎨 TabBar.module.css
 │   │   ├── 📄 App.jsx
 │   │   └── 📄 Form.jsx
 │   ├── 📁 Pages
-│   │   ├── 📄 Agendar_Servicos.jsx
+│   │   ├── 📁 Content
+│   │   │   ├── 📁 Servicos
+│   │   │   │   ├── 📄 Agendar.jsx
+│   │   │   │   ├── 📄 Lista.jsx
+│   │   │   │   ├── 📄 ListaHoje.jsx
+│   │   │   │   └── 📄 Servicos.jsx
+│   │   │   ├── 📄 Content.jsx
+│   │   │   └── 🎨 Content.module.css
+│   │   ├── 📁 LandingPage
+│   │   │   ├── 📄 LandingPage.jsx
+│   │   │   └── 🎨 LandingPage.module.css
 │   │   ├── 📄 Cadastro_Clientes.jsx
 │   │   ├── 📄 Cadastro_Funcionarios.jsx
 │   │   ├── 📄 Cadastro_Veiculos.jsx
 │   │   ├── 📄 Home.jsx
-│   │   ├── 📄 LandingPage.jsx
 │   │   ├── 📄 Login.jsx
-│   │   ├── 📄 Serviços_Agendados.jsx
 │   │   └── 📄 SignIn.jsx
 │   ├── 📁 StyleSheets
 │   │   ├── 🎨 Form.css

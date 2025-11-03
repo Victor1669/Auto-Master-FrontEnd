@@ -1,0 +1,24 @@
+:root {
+  --linkSize: 60px;
+}
+
+.nav {
+  width: 100px;
+  height: inherit;
+  background-color: var(--tabBarBack);
+
+  display: grid;
+  place-items: center;
+  grid-template-rows: repeat(8, 1fr);
+
+  a {
+    width: var(--linkSize);
+    height: var(--linkSize);
+    display: block;
+
+    img {
+      width: inherit;
+      height: inherit;
+    }
+  }
+}

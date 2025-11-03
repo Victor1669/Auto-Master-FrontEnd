@@ -7,6 +7,8 @@
 
   --enterButtonBack: #f40707;
   --normalButtonBack: #e82f2f;
+
+  --tabBarBack: #1b1b1b;
 }
 
 * {
@@ -17,8 +19,7 @@
   color: white;
 }
 body {
-  overflow: hidden;
-  min-width: 1600px;
+  overflow-x: hidden;
 }
 .App {
   background-color: var(--appBack);

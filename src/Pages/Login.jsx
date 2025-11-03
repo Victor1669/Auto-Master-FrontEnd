@@ -1,4 +1,5 @@
 import { useReducer } from "react";
+import { useNavigate } from "react-router-dom";
 import Form, { Field } from "../Components/Form";
 
 const initialState = {
@@ -22,8 +23,11 @@ function reducer(state, action) {
 export default function Login() {
   const [{ email, senha }, dispatch] = useReducer(reducer, initialState);
 
+  const navigate = useNavigate();
+
   function handleSubmit(e) {
     e.preventDefault();
+    navigate("/v1");
   }
 
   return (
