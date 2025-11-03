@@ -1,3 +1,3 @@
 export default function Cadastro_Cliente() {
-  return <div></div>;
+  return <div>Adicionar cliente</div>;
 }
