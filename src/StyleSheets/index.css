@@ -1,0 +1,65 @@
+@import url("./Form.css");
+
+:root {
+  --appBack: #100e0e;
+
+  --appDetailBack: #ba0b0b;
+
+  --enterButtonBack: #f40707;
+  --normalButtonBack: #e82f2f;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+}
+body {
+  overflow: hidden;
+  min-width: 1600px;
+}
+.App {
+  background-color: var(--appBack);
+  width: 100vw;
+  height: 100vh;
+}
+
+.red-car {
+  width: 800px;
+  animation: carSlide 1s linear forwards;
+
+  z-index: 1;
+  position: absolute;
+  top: 150px;
+
+  &.enter {
+    left: 100px;
+  }
+}
+.detail {
+  height: 500px;
+
+  position: absolute;
+  background-color: var(--appDetailBack);
+  rotate: 0 0 1 27deg;
+  top: 50%;
+
+  &.one {
+    width: 110px;
+    left: 230px;
+  }
+  &.two {
+    width: 140px;
+    left: 410px;
+  }
+}
+h1 {
+  font-size: 40px;
+  font-weight: 200;
+
+  position: absolute;
+  top: 80px;
+  left: 80px;
+}
