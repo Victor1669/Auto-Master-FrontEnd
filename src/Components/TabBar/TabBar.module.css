@@ -1,15 +1,15 @@
 :root {
-  --linkSize: 60px;
+  --linkSize: 40px;
 }
 
 .nav {
-  width: 100px;
+  width: 90px;
   height: inherit;
   background-color: var(--tabBarBack);
 
   display: grid;
   place-items: center;
-  grid-template-rows: repeat(8, 1fr);
+  grid-template-rows: repeat(10, 1fr);
 
   a {
     width: var(--linkSize);

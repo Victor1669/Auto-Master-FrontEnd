@@ -8,10 +8,10 @@ export default function Form({
   messageLink = <></>,
 }) {
   return (
-    <form className={className} onSubmit={onSubmit}>
+    <form className={`form ${className}`} onSubmit={onSubmit}>
       <h3>{title}</h3>
       {children}
-      <button className={btnClassName}>{btnText}</button>
+      <button className={`form-btn ${btnClassName}`}>{btnText}</button>
       {messageLink}
     </form>
   );
@@ -27,7 +27,7 @@ export function Field({
   type,
 }) {
   return (
-    <label className={labelClassName}>
+    <label className={`field ${labelClassName}`}>
       <span>{label}</span>
       <input
         ref={inputRef}

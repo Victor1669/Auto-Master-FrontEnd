@@ -1,0 +1,16 @@
+.client {
+  height: inherit;
+
+  padding: 40px;
+}
+
+.clientForm {
+  width: 500px;
+  height: 100%;
+  background-color: var(--normalFormBack);
+  border: 3px solid white;
+
+  button {
+    background-color: var(--normalButtonBack);
+  }
+}

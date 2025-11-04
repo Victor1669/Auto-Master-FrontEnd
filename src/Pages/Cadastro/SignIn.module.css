@@ -1,0 +1,19 @@
+.Signin {
+  height: inherit;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas: ". Form";
+  place-items: center;
+}
+
+.EnterForm {
+  grid-area: Form;
+  width: 480px;
+  height: 80%;
+  background: var(--enterFormBack);
+
+  button {
+    background-color: var(--enterButtonBack);
+  }
+}

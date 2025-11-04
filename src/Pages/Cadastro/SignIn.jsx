@@ -1,7 +1,13 @@
 import { useReducer } from "react";
-import { useNavigate } from "react-router-dom";
-import Form, { Field } from "../Components/Form";
 
+import { useNavigate } from "react-router-dom";
+
+import Form, { Field } from "../../Components/Form/Form";
+const BaseUrl = import.meta.env.VITE_BASE_URL;
+
+import styles from "./SignIn.module.css";
+
+// REDUCER
 const initialState = {
   email: "",
   senha: "",
@@ -20,6 +26,7 @@ function reducer(state, action) {
   }
 }
 
+// FUNÇÃO PRINCIPAL
 export default function Login() {
   const [{ email, senha }, dispatch] = useReducer(reducer, initialState);
 
@@ -31,33 +38,25 @@ export default function Login() {
   }
 
   return (
-    <div id="Login">
+    <div className={styles.Signin}>
       <header>
         <h1>AUTOMASTER</h1>
+        <img
+          className="red-car enter"
+          src="/src/assets/red-car.png"
+          alt="red car"
+        />
+        <span className="detail one"></span>
+        <span className="detail two"></span>
       </header>
-      <img
-        className="red-car enter"
-        src="/src/assets/red-car.png"
-        alt="red car"
-      />
-      <span className="detail one"></span>
-      <span className="detail two"></span>
 
       <Form
-        className="enter-form"
+        className={styles.EnterForm}
         onSubmit={handleSubmit}
-        btnClassName="form-btn"
-        btnText="Entrar"
+        btnText="Cadastrar"
       >
+        <Field type="email" value={email} dispatch={dispatch} label="Email" />
         <Field
-          labelClassName="field"
-          type="email"
-          value={email}
-          dispatch={dispatch}
-          label="Email"
-        />
-        <Field
-          labelClassName="field"
           type="senha"
           inputType="password"
           value={senha}
