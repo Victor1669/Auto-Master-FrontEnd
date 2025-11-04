@@ -1,12 +1,9 @@
-@import url("./Form.css");
+@import url("../Components/Form/Form.css");
 
 :root {
   --appBack: #100e0e;
 
   --appDetailBack: #ba0b0b;
-
-  --enterButtonBack: #f40707;
-  --normalButtonBack: #e82f2f;
 
   --tabBarBack: #1b1b1b;
 }
