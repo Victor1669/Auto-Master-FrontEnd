@@ -42,7 +42,7 @@ export default function Cadastro_Cliente() {
     dispatch({ type: "clear" });
     ipt1.current.focus();
 
-    console.log(nome, email, telefone);
+    console.log({ nome, email, telefone });
   }
 
   return (

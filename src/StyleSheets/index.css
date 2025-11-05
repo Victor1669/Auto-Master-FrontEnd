@@ -16,12 +16,13 @@
   color: white;
 }
 body {
-  overflow-x: hidden;
+  overflow: hidden;
 }
 .App {
   background-color: var(--appBack);
   width: 100vw;
   height: 100vh;
+  overflow-x: hidden;
 }
 
 .red-car {

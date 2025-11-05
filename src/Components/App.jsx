@@ -7,7 +7,7 @@ import Content from "../Pages/Content/Content";
 import Home from "../Pages/Home";
 
 import Clientes from "../Pages/Content/Clientes/Clientes";
-import Veiculos from "../Pages/Content/Veiculos";
+import Veiculos from "../Pages/Content/Veiculos/Veiculos";
 import Funcionarios from "../Pages/Content/Funcionarios";
 
 import Servicos from "../Pages/Content/Servicos/Servicos";

@@ -9,7 +9,7 @@ export default function Form({
 }) {
   return (
     <form className={`form ${className}`} onSubmit={onSubmit}>
-      <h3>{title}</h3>
+      {title && <h3>{title}</h3>}
       {children}
       <button className={`form-btn ${btnClassName}`}>{btnText}</button>
       {messageLink}
