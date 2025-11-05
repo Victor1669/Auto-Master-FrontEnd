@@ -1,9 +1,8 @@
 const BaseUrl = import.meta.env.VITE_BASE_URL;
 
-import { useReducer } from "react";
+import { useReducer, useRef } from "react";
 
 import Form, { Field } from "../../../Components/Form/Form";
-import { useRef } from "react";
 
 import styles from "./Veiculos.module.css";
 

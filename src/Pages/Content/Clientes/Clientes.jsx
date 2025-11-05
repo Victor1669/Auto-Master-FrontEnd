@@ -46,9 +46,9 @@ export default function Cadastro_Cliente() {
   }
 
   return (
-    <div className={styles.client}>
+    <div className={styles.Clientes}>
       <Form
-        className={styles.clientForm}
+        className={styles.ClientesForm}
         onSubmit={handleSubmit}
         btnText="Cadastrar"
       >
