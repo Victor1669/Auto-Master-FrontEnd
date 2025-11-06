@@ -1,11 +1,10 @@
 .Veiculos {
-  display: flex;
-  align-items: center;
-  padding-left: 50px;
+  padding: 40px;
 }
 .VeiculosForm {
   width: 850px;
-  height: 90%;
+  height: 100%;
+  margin: auto;
 
   background-color: var(--normalFormBack);
   border: 2px solid white;
@@ -45,11 +44,12 @@
   width: 350px;
   background-color: var(--normalButtonBack);
 
-  margin: -50px 30px 0;
+  margin: 95px 30px 0;
 
   justify-self: center;
 }
 .IdInput {
+  margin-bottom: 25px;
   input {
     color: black;
     padding: 10px;

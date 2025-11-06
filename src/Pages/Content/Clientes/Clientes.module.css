@@ -1,12 +1,11 @@
 .Clientes {
-  height: inherit;
-
   padding: 40px;
 }
 
 .ClientesForm {
   width: 500px;
   height: 100%;
+  margin: auto;
   background-color: var(--normalFormBack);
   border: 3px solid white;
 

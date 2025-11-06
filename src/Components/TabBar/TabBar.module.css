@@ -3,13 +3,13 @@
 }
 
 .nav {
-  width: 90px;
-  height: inherit;
+  width: inherit;
+  height: 90px;
   background-color: var(--tabBarBack);
 
   display: grid;
   place-items: center;
-  grid-template-rows: repeat(10, 1fr);
+  grid-template-columns: repeat(10, 1fr);
 
   a {
     width: var(--linkSize);

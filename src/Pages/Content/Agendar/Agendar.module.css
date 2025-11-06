@@ -1,22 +1,18 @@
 .Agendar {
-  height: 90%;
-
-  display: flex;
-  align-items: center;
-  padding-left: 50px;
+  padding: 40px;
 }
 .AgendarForm {
   width: 900px;
-  height: 90%;
   background-color: var(--normalFormBack);
 
   border: 4px solid red;
   padding: 40px;
+  margin: auto;
 
   position: relative;
 
   display: grid;
-  justify-content: space-between;
+  justify-content: center;
 
   h3 {
     width: 100%;
@@ -29,7 +25,8 @@
 }
 
 .FieldContainer {
-  width: 100%;
+  width: 600px;
+  margin: auto;
 
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -87,8 +84,8 @@
   }
 }
 .Diviser {
-  width: 700px;
-  height: 10px;
+  width: 900px;
+  height: 5px;
   margin: auto;
   background-color: red;
   border-radius: 5px;
@@ -101,7 +98,7 @@
   border-radius: 10px;
   outline: 1px solid red;
   outline-offset: 9px;
-  margin-left: 9px;
+  margin: 30px auto;
 
   display: flex;
   flex-direction: column;

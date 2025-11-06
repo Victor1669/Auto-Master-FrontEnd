@@ -1,14 +1,14 @@
 .Funcionarios {
-  display: flex;
-  align-items: center;
-  padding-left: 50px;
+  padding: 20px;
 }
 .FuncionariosForm {
   width: 850px;
-  height: 90%;
-
+  height: fit-content;
   background-color: var(--normalFormBack);
+
   border: 2px solid white;
+  margin: auto;
+  padding: 50px;
 
   position: relative;
 
@@ -21,9 +21,6 @@
   h3 {
     width: 100%;
 
-    align-self: flex-start;
-    margin-top: 120px;
-
     text-align: center;
     font-size: 28px;
   }
@@ -31,10 +28,13 @@
 .FormBtn {
   grid-area: button;
 
-  width: 350px;
+  width: 100%;
   background-color: var(--normalButtonBack);
 
-  margin: 80px 30px 0;
+  margin: 0 35px;
+
+  position: absolute;
+  bottom: 18px;
 
   justify-self: center;
 }
@@ -42,8 +42,6 @@
   grid-area: fields;
 
   width: 350px;
-  height: inherit;
-  margin: 30px;
 
   display: flex;
   flex-direction: column;
