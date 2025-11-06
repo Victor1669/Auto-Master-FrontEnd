@@ -53,15 +53,8 @@ export default function Login() {
         onSubmit={handleSubmit}
         btnText="Entrar"
       >
+        <Field type="email" value={email} dispatch={dispatch} label="Email" />
         <Field
-          labelClassName="field"
-          type="email"
-          value={email}
-          dispatch={dispatch}
-          label="Email"
-        />
-        <Field
-          labelClassName="field"
           type="senha"
           inputType="password"
           value={senha}
