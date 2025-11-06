@@ -16,18 +16,24 @@
 │   │   │   ├── 📄 SignIn.jsx
 │   │   │   └── 🎨 SignIn.module.css
 │   │   ├── 📁 Content
+│   │   │   ├── 📁 Agendar
+│   │   │   │   ├── 📄 Agendar.jsx
+│   │   │   │   └── 🎨 Agendar.module.css
 │   │   │   ├── 📁 Clientes
 │   │   │   │   ├── 📄 Clientes.jsx
 │   │   │   │   └── 🎨 Clientes.module.css
+│   │   │   ├── 📁 Funcionarios
+│   │   │   │   ├── 📄 Funcionarios.jsx
+│   │   │   │   └── 🎨 Funcionarios.module.css
 │   │   │   ├── 📁 Servicos
-│   │   │   │   ├── 📄 Agendar.jsx
 │   │   │   │   ├── 📄 Lista.jsx
 │   │   │   │   ├── 📄 ListaHoje.jsx
 │   │   │   │   └── 📄 Servicos.jsx
+│   │   │   ├── 📁 Veiculos
+│   │   │   │   ├── 📄 Veiculos.jsx
+│   │   │   │   └── 🎨 Veiculos.module.css
 │   │   │   ├── 📄 Content.jsx
-│   │   │   ├── 🎨 Content.module.css
-│   │   │   ├── 📄 Funcionarios.jsx
-│   │   │   └── 📄 Veiculos.jsx
+│   │   │   └── 🎨 Content.module.css
 │   │   ├── 📁 LandingPage
 │   │   │   ├── 📄 LandingPage.jsx
 │   │   │   └── 🎨 LandingPage.module.css

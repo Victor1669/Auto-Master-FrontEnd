@@ -42,25 +42,33 @@ export default function Cadastro_Cliente() {
     dispatch({ type: "clear" });
     ipt1.current.focus();
 
-    console.log(nome, email, telefone);
+    console.log({ nome, email, telefone });
   }
 
   return (
-    <div className={styles.client}>
+    <div className={styles.Clientes}>
       <Form
-        className={styles.clientForm}
+        className={styles.ClientesForm}
         onSubmit={handleSubmit}
         btnText="Cadastrar"
       >
         <Field
+          labelClassName="field"
           inputRef={ipt1}
           label="Nome"
           value={nome}
           dispatch={dispatch}
           type="nome"
         />
-        <Field label="Email" value={email} dispatch={dispatch} type="email" />
         <Field
+          labelClassName="field"
+          label="Email"
+          value={email}
+          dispatch={dispatch}
+          type="email"
+        />
+        <Field
+          labelClassName="field"
           label="Telefone"
           value={telefone}
           dispatch={dispatch}

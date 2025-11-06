@@ -1,0 +1,57 @@
+.Veiculos {
+  display: flex;
+  align-items: center;
+  padding-left: 50px;
+}
+.VeiculosForm {
+  width: 850px;
+  height: 90%;
+
+  background-color: var(--normalFormBack);
+  border: 2px solid white;
+
+  position: relative;
+
+  display: grid;
+  justify-content: space-between;
+  grid-template-areas:
+    "fields title"
+    "fields button";
+
+  h3 {
+    width: 100%;
+
+    align-self: flex-start;
+    margin-top: 120px;
+
+    text-align: center;
+    font-size: 28px;
+  }
+}
+.pt1 {
+  grid-area: fields;
+
+  width: 350px;
+  height: inherit;
+  margin: 30px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.FormBtn {
+  grid-area: button;
+
+  width: 350px;
+  background-color: var(--normalButtonBack);
+
+  margin: -50px 30px 0;
+
+  justify-self: center;
+}
+.IdInput {
+  input {
+    color: black;
+    padding: 10px;
+  }
+}
