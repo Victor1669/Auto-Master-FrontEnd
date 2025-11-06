@@ -11,7 +11,7 @@ import Veiculos from "../Pages/Content/Veiculos/Veiculos";
 import Funcionarios from "../Pages/Content/Funcionarios/Funcionarios";
 
 import Servicos from "../Pages/Content/Servicos/Servicos";
-import Agendar from "../Pages/Content/Servicos/Agendar";
+import Agendar from "../Pages/Content/Agendar/Agendar";
 import Lista from "../Pages/Content/Servicos/Lista";
 import ListaHoje from "../Pages/Content/Servicos/ListaHoje";
 

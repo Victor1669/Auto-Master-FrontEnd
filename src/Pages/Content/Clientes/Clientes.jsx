@@ -53,14 +53,22 @@ export default function Cadastro_Cliente() {
         btnText="Cadastrar"
       >
         <Field
+          labelClassName="field"
           inputRef={ipt1}
           label="Nome"
           value={nome}
           dispatch={dispatch}
           type="nome"
         />
-        <Field label="Email" value={email} dispatch={dispatch} type="email" />
         <Field
+          labelClassName="field"
+          label="Email"
+          value={email}
+          dispatch={dispatch}
+          type="email"
+        />
+        <Field
+          labelClassName="field"
           label="Telefone"
           value={telefone}
           dispatch={dispatch}

@@ -2,8 +2,8 @@ export default function Form({
   children,
   title,
   onSubmit,
-  className,
-  btnClassName,
+  className = "",
+  btnClassName = "",
   btnText,
   messageLink = <></>,
 }) {
@@ -11,7 +11,9 @@ export default function Form({
     <form className={`form ${className}`} onSubmit={onSubmit}>
       {title && <h3>{title}</h3>}
       {children}
-      <button className={`form-btn ${btnClassName}`}>{btnText}</button>
+      {btnText && (
+        <button className={`form-btn ${btnClassName}`}>{btnText}</button>
+      )}
       {messageLink}
     </form>
   );
@@ -19,7 +21,7 @@ export default function Form({
 
 export function Field({
   label,
-  labelClassName,
+  labelClassName = "",
   inputType = "text",
   inputRef,
   value,
@@ -27,7 +29,7 @@ export function Field({
   type,
 }) {
   return (
-    <label className={`field ${labelClassName}`}>
+    <label className={labelClassName}>
       <span>{label}</span>
       <input
         ref={inputRef}

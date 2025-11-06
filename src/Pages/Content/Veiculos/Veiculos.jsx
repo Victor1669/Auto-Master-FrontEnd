@@ -62,15 +62,34 @@ export default function Cadastro_Veiculo() {
       >
         <div className={styles.pt1}>
           <IdField ref={ipt1} value={id} dispatch={dispatch} />
-          <Field label="Marca" value={marca} dispatch={dispatch} type="marca" />
           <Field
+            labelClassName="field"
+            label="Marca"
+            value={marca}
+            dispatch={dispatch}
+            type="marca"
+          />
+          <Field
+            labelClassName="field"
             label="Modelo"
             value={modelo}
             dispatch={dispatch}
             type="modelo"
           />
-          <Field label="Ano" value={ano} dispatch={dispatch} type="ano" />
-          <Field label="Placa" value={placa} dispatch={dispatch} type="placa" />
+          <Field
+            labelClassName="field"
+            label="Ano"
+            value={ano}
+            dispatch={dispatch}
+            type="ano"
+          />
+          <Field
+            labelClassName="field"
+            label="Placa"
+            value={placa}
+            dispatch={dispatch}
+            type="placa"
+          />
         </div>
       </Form>
     </div>

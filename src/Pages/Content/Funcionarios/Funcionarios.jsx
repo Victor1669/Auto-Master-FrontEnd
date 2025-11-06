@@ -67,21 +67,36 @@ export default function Cadastro_Funcionario() {
       >
         <div className={styles.pt1}>
           <Field
+            labelClassName="field"
             inputRef={ipt1}
             label="Nome"
             value={nome}
             dispatch={dispatch}
             type="nome"
           />
-          <Field label="Email" value={email} dispatch={dispatch} type="email" />
-          <Field label="Senha" value={senha} dispatch={dispatch} type="senha" />
           <Field
+            labelClassName="field"
+            label="Email"
+            value={email}
+            dispatch={dispatch}
+            type="email"
+          />
+          <Field
+            labelClassName="field"
+            label="Senha"
+            value={senha}
+            dispatch={dispatch}
+            type="senha"
+          />
+          <Field
+            labelClassName="field"
             label="Telefone"
             value={telefone}
             dispatch={dispatch}
             type="telefone"
           />
           <Field
+            labelClassName="field"
             label="Função"
             value={funcao}
             dispatch={dispatch}
