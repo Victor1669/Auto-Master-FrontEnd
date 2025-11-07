@@ -5,41 +5,23 @@
 ├── 📁 src
 │   ├── 📁 Components
 │   │   ├── 📁 Form
-│   │   │   ├── 🎨 Form.css
-│   │   │   └── 📄 Form.jsx
 │   │   ├── 📁 TabBar
-│   │   │   ├── 📄 TabBar.jsx
-│   │   │   └── 🎨 TabBar.module.css
 │   │   └── 📄 App.jsx
 │   ├── 📁 Pages
 │   │   ├── 📁 Cadastro
-│   │   │   ├── 📄 SignIn.jsx
-│   │   │   └── 🎨 SignIn.module.css
 │   │   ├── 📁 Content
 │   │   │   ├── 📁 Agendar
-│   │   │   │   ├── 📄 Agendar.jsx
-│   │   │   │   └── 🎨 Agendar.module.css
 │   │   │   ├── 📁 Clientes
-│   │   │   │   ├── 📄 Clientes.jsx
-│   │   │   │   └── 🎨 Clientes.module.css
 │   │   │   ├── 📁 Funcionarios
-│   │   │   │   ├── 📄 Funcionarios.jsx
-│   │   │   │   └── 🎨 Funcionarios.module.css
 │   │   │   ├── 📁 Servicos
 │   │   │   │   ├── 📄 Lista.jsx
 │   │   │   │   ├── 📄 ListaHoje.jsx
 │   │   │   │   └── 📄 Servicos.jsx
 │   │   │   ├── 📁 Veiculos
-│   │   │   │   ├── 📄 Veiculos.jsx
-│   │   │   │   └── 🎨 Veiculos.module.css
 │   │   │   ├── 📄 Content.jsx
 │   │   │   └── 🎨 Content.module.css
 │   │   ├── 📁 LandingPage
-│   │   │   ├── 📄 LandingPage.jsx
-│   │   │   └── 🎨 LandingPage.module.css
 │   │   ├── 📁 Login
-│   │   │   ├── 📄 Login.jsx
-│   │   │   └── 🎨 Login.module.css
 │   │   └── 📄 Home.jsx
 │   ├── 📁 StyleSheets
 │   │   └── 🎨 index.css
