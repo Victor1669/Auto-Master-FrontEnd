@@ -25,11 +25,11 @@ export default function TabBar() {
       <NavLink to="funcionarios">
         <img src={TabFunc} alt="" />
       </NavLink>
-      <NavLink to="servicos/lista">
-        <img src={TabPesq} alt="" />
-      </NavLink>
       <NavLink to="servicos/agendar">
         <img src={TabAgen} alt="" />
+      </NavLink>
+      <NavLink to="servicos/lista">
+        <img src={TabPesq} alt="" />
       </NavLink>
       <span></span>
       <span></span>

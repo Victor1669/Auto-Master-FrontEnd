@@ -2,6 +2,7 @@ import { Routes, Route, Navigate } from "react-router-dom";
 
 import LandingPage from "../Pages/LandingPage/LandingPage";
 import Login from "../Pages/Login/Login";
+import Reset from "../Pages/Login/Reset/Reset";
 import SignIn from "../Pages/Cadastro/SignIn";
 import Content from "../Pages/Content/Content";
 import Home from "../Pages/Home";
@@ -21,6 +22,7 @@ export default function App() {
       <Routes>
         <Route index element={<LandingPage />} />
         <Route path="login" element={<Login />} />
+        <Route path="login/reset" element={<Reset />} />
         <Route path="signin" element={<SignIn />} />
         <Route path="v1" element={<Content />}>
           <Route index element={<Navigate replace to="home" />} />

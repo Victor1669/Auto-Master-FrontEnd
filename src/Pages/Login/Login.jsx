@@ -1,6 +1,6 @@
 import { useReducer } from "react";
 
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 import Form, { Field } from "../../Components/Form/Form";
 const BaseUrl = import.meta.env.VITE_BASE_URL;
@@ -68,6 +68,10 @@ export default function Login() {
           dispatch={dispatch}
           label="Senha"
         />
+        <p>
+          <span>Esqueceu a senha? </span>
+          <Link to="reset">Clique aqui</Link>
+        </p>
       </Form>
     </div>
   );
