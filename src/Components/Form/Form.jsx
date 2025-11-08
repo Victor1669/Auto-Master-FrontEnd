@@ -28,6 +28,13 @@ export function Field({
   dispatch,
   type,
 }) {
+  const autoCompleteType =
+    inputType === "password"
+      ? "current-password"
+      : inputType === "email"
+      ? "email"
+      : "name";
+
   return (
     <label className={labelClassName}>
       <span>{label}</span>
@@ -37,6 +44,7 @@ export function Field({
         value={value}
         onChange={(e) => dispatch({ type, payload: e.target.value })}
         type={inputType}
+        autoComplete={autoCompleteType}
       />
     </label>
   );

@@ -1,0 +1,27 @@
+.Reset {
+  height: inherit;
+
+  display: grid;
+  place-items: center;
+}
+.ResetForm {
+  background-color: white;
+  text-align: center;
+
+  padding: 80px 0px;
+  gap: 30px;
+
+  * {
+    color: black;
+  }
+
+  input {
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid black;
+  }
+
+  button {
+    background-color: var(--normalButtonBack);
+  }
+}
