@@ -38,9 +38,13 @@ export default function Login() {
 
     const body = { email, senha };
 
-    const { res } = await CadastroUsuario(body);
+    const { req } = await CadastroUsuario(body);
 
-    if (!res.ok) {
+    const msg = await req.json();
+
+    console.log(msg.message);
+
+    if (!req.ok) {
       return;
     }
 

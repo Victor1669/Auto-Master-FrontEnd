@@ -7,7 +7,7 @@ import SignIn from "../Pages/Cadastro/SignIn";
 import Content from "../Pages/Content/Content";
 import Home from "../Pages/Home";
 
-import Clientes from "../Pages/Content/Clientes/Clientes";
+import Cad_Clientes from "../Pages/Content/Clientes/Cad_Clientes";
 import Veiculos from "../Pages/Content/Veiculos/Veiculos";
 import Funcionarios from "../Pages/Content/Funcionarios/Funcionarios";
 
@@ -27,7 +27,7 @@ export default function App() {
         <Route path="v1" element={<Content />}>
           <Route index element={<Navigate replace to="home" />} />
           <Route path="home" element={<Home />} />
-          <Route path="clientes" element={<Clientes />} />
+          <Route path="clientes" element={<Cad_Clientes />} />
           <Route path="veiculos" element={<Veiculos />} />
           <Route path="funcionarios" element={<Funcionarios />} />
           <Route path="servicos" element={<Servicos />}>
