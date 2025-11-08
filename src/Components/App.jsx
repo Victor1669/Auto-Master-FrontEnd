@@ -13,7 +13,7 @@ import Funcionarios from "../Pages/Content/Funcionarios/Funcionarios";
 
 import Servicos from "../Pages/Content/Servicos/Servicos";
 import Agendar from "../Pages/Content/Agendar/Agendar";
-import Lista from "../Pages/Content/Servicos/Lista";
+import ListaServicos from "../Pages/Content/ListaServicos/ListaServicos";
 import ListaHoje from "../Pages/Content/Servicos/ListaHoje";
 
 export default function App() {
@@ -32,7 +32,7 @@ export default function App() {
           <Route path="funcionarios" element={<Funcionarios />} />
           <Route path="servicos" element={<Servicos />}>
             <Route index element={<Navigate replace to="lista" />} />
-            <Route path="lista" element={<Lista />} />
+            <Route path="lista" element={<ListaServicos />} />
             <Route path="agendar" element={<Agendar />} />
             <Route path="hoje" element={<ListaHoje />} />
           </Route>

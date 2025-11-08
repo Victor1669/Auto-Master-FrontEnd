@@ -1,0 +1,98 @@
+.Servicos {
+  padding: 40px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.SearchContainer {
+  position: relative;
+
+  &::after {
+    content: "";
+    display: block;
+    width: 30px;
+    height: 30px;
+    background: url("../../../assets/tab-query-services.png") center center
+      no-repeat;
+    background-size: cover;
+
+    position: absolute;
+    inset: 0 0 0 auto;
+    margin: auto 10px auto 0;
+  }
+}
+.SearchBar {
+  width: 400px;
+  background-color: #b2b2b2;
+
+  padding: 15px;
+  border-radius: 15px;
+  border: none;
+  margin: auto;
+
+  &::placeholder,
+  & {
+    color: black;
+  }
+  &::-webkit-search-cancel-button {
+    display: none;
+  }
+}
+.ListaItem {
+  background-color: var(--listItemBack);
+
+  display: flex;
+  align-items: center;
+  gap: 40px;
+
+  padding: 20px;
+  border-radius: 20px;
+  margin: 30px 0;
+
+  figure {
+    width: 125px;
+    height: 125px;
+    background-color: #9f9f9f;
+
+    border-radius: inherit;
+
+    display: grid;
+    place-items: center;
+
+    img {
+      width: 50%;
+      height: 50%;
+    }
+  }
+
+  p {
+    width: 300px;
+    display: grid;
+    gap: 10px;
+  }
+}
+.ItemContent {
+  background-color: #d9d9d9;
+  border-radius: 15px;
+  padding: 20px;
+
+  display: flex;
+  gap: 80px;
+
+  * {
+    color: black;
+  }
+}
+.ItemStatus {
+  width: 190px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
+
+  * {
+    width: inherit;
+  }
+}

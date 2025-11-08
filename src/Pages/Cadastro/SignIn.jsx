@@ -3,7 +3,8 @@ import { useReducer } from "react";
 import { useNavigate } from "react-router-dom";
 
 import Form, { Field } from "../../Components/Form/Form";
-const BaseUrl = import.meta.env.VITE_BASE_URL;
+
+import { CadastroUsuario } from "../../Services/Usuario";
 
 import styles from "./SignIn.module.css";
 
@@ -32,8 +33,17 @@ export default function Login() {
 
   const navigate = useNavigate();
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
+
+    const body = { email, senha };
+
+    const { res } = await CadastroUsuario(body);
+
+    if (!res.ok) {
+      return;
+    }
+
     navigate("/v1");
   }
 
