@@ -1,0 +1,71 @@
+.Agendar {
+  padding: 40px;
+}
+.AgendarForm {
+  width: 900px;
+  background-color: var(--normalFormBack);
+
+  border: 4px solid red;
+  padding: 40px;
+  margin: auto;
+
+  position: relative;
+
+  display: grid;
+  justify-content: center;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-rows: 70px auto 150px;
+  grid-template-areas:
+    "title title"
+    "fields fields"
+    "desc submit";
+
+  h3 {
+    grid-area: title;
+    width: 700px;
+
+    align-self: flex-start;
+
+    text-align: center;
+    font-size: 28px;
+  }
+}
+
+.FieldSet {
+  grid-area: fields;
+  width: 100%;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+
+  input {
+    height: 55px;
+  }
+}
+.DescField,
+.SubmitButton {
+  width: 100%;
+  align-self: flex-end;
+}
+
+.DescField {
+  grid-area: desc;
+  width: fit-content;
+
+  &,
+  textarea {
+    margin-bottom: 0;
+  }
+  textarea {
+    resize: none;
+    width: 357px;
+    height: 120px;
+  }
+}
+.SubmitButton {
+  grid-area: submit;
+  width: 357px;
+
+  background-color: var(--normalButtonBack);
+}

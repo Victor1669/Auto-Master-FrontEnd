@@ -1,48 +1,26 @@
-import { useReducer } from "react";
-
 import { useNavigate, Link } from "react-router-dom";
 
 import Form, { Field } from "../../Components/Form/Form";
 
-import { LoginUsuario } from "../../Services/Usuario";
+import { LoginUsuario, useUsuario } from "../../Services/Usuario";
 
 import styles from "./Login.module.css";
 
-const initialState = {
-  email: "",
-  senha: "",
-};
-
-function reducer(state, action) {
-  const { type, payload } = action;
-
-  switch (type) {
-    case "email":
-      return { ...state, email: payload };
-    case "senha":
-      return { ...state, senha: payload };
-    default:
-      throw new Error("Erro ao fazer login!");
-  }
-}
-
 export default function Login() {
-  const [{ email, senha }, dispatch] = useReducer(reducer, initialState);
+  const { state, dispatch } = useUsuario();
+
+  const { email, senha } = state;
 
   const navigate = useNavigate();
 
   async function handleSubmit(e) {
     e.preventDefault();
 
-    const body = { email, senha };
+    const { res, data } = await LoginUsuario(state);
 
-    const { req } = await LoginUsuario(body);
+    console.log(data.message);
 
-    const msg = await req.json();
-
-    console.log(msg.message);
-
-    if (!req.ok) {
+    if (!res.ok) {
       return;
     }
 

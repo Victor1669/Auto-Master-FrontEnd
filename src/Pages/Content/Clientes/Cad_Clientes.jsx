@@ -1,50 +1,26 @@
-import { useReducer, useRef } from "react";
+import { useRef } from "react";
 
 import Form, { Field } from "../../../Components/Form/Form";
 
 import styles from "./Clientes.module.css";
-import { CadastrarCliente } from "../../../Services/Clientes";
 
-const initialState = {
-  nome: "",
-  cpf: "",
-  telefone: "",
-};
-
-function reducer(state, action) {
-  const { type, payload } = action;
-
-  switch (type) {
-    case "nome":
-      return { ...state, nome: payload };
-    case "cpf":
-      return { ...state, cpf: payload };
-    case "telefone":
-      return { ...state, telefone: payload };
-    case "clear":
-      return { ...state, nome: "", cpf: "", telefone: "" };
-    default:
-      throw new Error("Ação inválida: " + type);
-  }
-}
+import { CadastrarCliente, useClientes } from "../../../Services/Clientes";
 
 export default function Cad_Cliente() {
-  const [{ nome, cpf, telefone }, dispatch] = useReducer(reducer, initialState);
+  const { state, dispatch } = useClientes();
+
+  const { nome, cpf, telefone } = state;
 
   const ipt1 = useRef(null);
 
   async function handleSubmit(e) {
     e.preventDefault();
 
-    const body = { nome, cpf, telefone };
+    const { res, data } = await CadastrarCliente({ nome, cpf, telefone });
 
-    const { req } = await CadastrarCliente(body);
+    console.log(data.message);
 
-    const msg = await req.json();
-
-    console.log(msg.message);
-
-    if (!req.ok) {
+    if (!res.ok) {
       return;
     }
 
@@ -81,6 +57,7 @@ export default function Cad_Cliente() {
           value={telefone}
           dispatch={dispatch}
           type="telefone"
+          inputType="tel"
         />
       </Form>
     </div>
