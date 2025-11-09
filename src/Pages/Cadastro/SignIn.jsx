@@ -2,7 +2,9 @@ import { useNavigate } from "react-router-dom";
 
 import Form, { Field } from "../../Components/Form/Form";
 
-import { CadastroUsuario, useUsuario } from "../../Services/Usuario";
+import { CadastroUsuario } from "../../Services/Usuario";
+
+import { useUsuario } from "../../Hooks/useUsuario";
 
 import styles from "./SignIn.module.css";
 

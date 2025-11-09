@@ -7,6 +7,12 @@
 │   │   ├── 📁 Form
 │   │   ├── 📁 TabBar
 │   │   └── 📄 App.jsx
+│   ├── 📁 Hooks
+│   │   ├── 📄 useClientes.jsx
+│   │   ├── 📄 usePesquisaServico.jsx
+│   │   ├── 📄 useServicos.jsx
+│   │   ├── 📄 useUsuario.jsx
+│   │   └── 📄 useVeiculo.jsx
 │   ├── 📁 Pages
 │   │   ├── 📁 Cadastro
 │   │   ├── 📁 Content
@@ -21,8 +27,6 @@
 │   │   │   │   ├── 🎨 Cad_Servicos.module.css
 │   │   │   │   └── 📄 Servicos.jsx
 │   │   │   ├── 📁 Veiculos
-│   │   │   ├── 📄 Content.jsx
-│   │   │   └── 🎨 Content.module.css
 │   │   ├── 📁 LandingPage
 │   │   ├── 📁 Login
 │   │   │   ├── 📁 Reset

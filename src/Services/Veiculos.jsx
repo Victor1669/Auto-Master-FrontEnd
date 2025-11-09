@@ -3,7 +3,7 @@ const BaseUrl = import.meta.env.VITE_BASE_URL;
 async function CadastroVeiculo(corpo) {
   const body = JSON.stringify(corpo);
 
-  const req = await fetch(`${BaseUrl}/veiculos/cadastrarVeiculo`, {
+  const res = await fetch(`${BaseUrl}/veiculos/cadastrarVeiculo`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -11,9 +11,9 @@ async function CadastroVeiculo(corpo) {
     body,
   });
 
-  return { req };
+  const data = res.json();
+
+  return { res, data };
 }
 
-function useVeiculo() {}
-
-export { CadastroVeiculo, useVeiculo };
+export { CadastroVeiculo };

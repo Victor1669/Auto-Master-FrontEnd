@@ -1,60 +1,20 @@
-const BaseUrl = import.meta.env.VITE_BASE_URL;
+import { usePesquisaServicos } from "../../../Hooks/usePesquisaServico";
 
-import { useState, useEffect } from "react";
+import { DateFormatter } from "../../../Utils/DateFormatter";
 
 import styles from "./ListaServicos.module.css";
 
-const initialData = [
-  {
-    cliente: "Pietro Santos Miranda",
-    veiculo: "Porsche GT3 RS - Vermelha",
-    data: "21/09/2025",
-    previsaoEntrega: 21,
-    descricao: "Batida no parachoque",
-    status: "concluído",
-  },
-  {
-    cliente: "Victor Pereira",
-    veiculo: "Uno com escada",
-    data: "25/09/2025",
-    previsaoEntrega: 10,
-    descricao: "Problema de BIOS",
-    status: "Não iniciado",
-  },
-  {
-    cliente: "Victor Fernandes Baltazar",
-    veiculo: "Mustang",
-    data: "30/09/2025",
-    previsaoEntrega: 14,
-    descricao: "abcdefghijklmnopqrstuvwxyz",
-    status: "pendente",
-  },
-];
-
 export default function ListaServicos() {
-  const [query, setQuery] = useState("");
-  const [results, setResults] = useState(initialData);
-
-  useEffect(() => {
-    if (!query.length) {
-      setResults(initialData);
-      return;
-    }
-
-    setResults(
-      initialData.filter((s) =>
-        s.cliente.toLowerCase().includes(query.toLowerCase())
-      )
-    );
-  }, [query]);
+  const { query, setQuery, isLoading, servicos } = usePesquisaServicos();
 
   return (
     <div className={styles.Servicos}>
       <SearchBar query={query} setQuery={setQuery} />
-      <ServicoLista results={results} />
+      {!isLoading ? <ServicoLista servicos={servicos} /> : <></>}
     </div>
   );
 }
+
 function SearchBar({ query, setQuery }) {
   return (
     <div className={styles.SearchContainer}>
@@ -68,18 +28,29 @@ function SearchBar({ query, setQuery }) {
     </div>
   );
 }
-function ServicoLista({ results }) {
+
+function ServicoLista({ servicos }) {
   return (
     <ul>
-      {results.map((servico, index) => (
+      {servicos.map((servico, index) => (
         <ServicoItem key={index} servico={servico} />
       ))}
     </ul>
   );
 }
+
 function ServicoItem({ servico }) {
-  const { cliente, veiculo, data, previsaoEntrega, descricao, status } =
-    servico;
+  const { nomeCliente, modelo, data, descricao, status } = servico;
+
+  // CÁLCULO DE QUANTOS DIAS FALTAM PRA ENTREGA
+  const hoje = new Date();
+  const diaEntrega = new Date(data);
+  const previsaoEntrega = Math.floor(
+    (diaEntrega - hoje) / (1000 * 60 * 60 * 24)
+  );
+
+  // CONVERSÃO DA DATA
+  const dataFormatada = DateFormatter(new Date(data));
 
   const statusEmoji =
     status === "concluído" ? "🟢" : status === "pendente" ? "🟡" : "🔴";
@@ -93,10 +64,10 @@ function ServicoItem({ servico }) {
       </figure>
       <div className={styles.ItemContent}>
         <p>
-          <span>Cliente: {cliente}</span>
-          <span>Veículo: {veiculo}</span>
-          <span>Data de Solicitação: {data}</span>
-          <span>Previsão de entrega: {previsaoEntrega}</span>
+          <span>Cliente: {nomeCliente}</span>
+          <span>Veículo: {modelo}</span>
+          <span>Data de Solicitação: {dataFormatada}</span>
+          <span>Previsão de entrega: {previsaoEntrega} dias</span>
           <span>
             Descrição: {descFormatado}
             {descricao.length > 20 ? "..." : ""}
@@ -109,6 +80,7 @@ function ServicoItem({ servico }) {
               padding: 10,
               borderRadius: 10,
               textAlign: "center",
+              textTransform: "capitalize",
             }}
           >
             Status: {statusEmoji} {status}
