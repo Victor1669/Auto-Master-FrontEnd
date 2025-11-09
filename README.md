@@ -10,21 +10,33 @@
 │   ├── 📁 Pages
 │   │   ├── 📁 Cadastro
 │   │   ├── 📁 Content
-│   │   │   ├── 📁 Agendar
 │   │   │   ├── 📁 Clientes
 │   │   │   ├── 📁 Funcionarios
-│   │   │   ├── 📁 Servicos
-│   │   │   │   ├── 📄 Lista.jsx
+│   │   │   ├── 📁 ListaServicos
 │   │   │   │   ├── 📄 ListaHoje.jsx
+│   │   │   │   ├── 📄 ListaServicos.jsx
+│   │   │   │   └── 🎨 ListaServicos.module.css
+│   │   │   ├── 📁 Servicos
+│   │   │   │   ├── 📄 Cad_Servicos.jsx
+│   │   │   │   ├── 🎨 Cad_Servicos.module.css
 │   │   │   │   └── 📄 Servicos.jsx
 │   │   │   ├── 📁 Veiculos
 │   │   │   ├── 📄 Content.jsx
 │   │   │   └── 🎨 Content.module.css
 │   │   ├── 📁 LandingPage
 │   │   ├── 📁 Login
+│   │   │   ├── 📁 Reset
 │   │   └── 📄 Home.jsx
+│   ├── 📁 Services
+│   │   ├── 📄 Clientes.jsx
+│   │   ├── 📄 Servicos.jsx
+│   │   ├── 📄 Usuario.jsx
+│   │   └── 📄 Veiculos.jsx
 │   ├── 📁 StyleSheets
 │   │   └── 🎨 index.css
+│   ├── 📁 Utils
+│   │   └── 📄 DateFormatter.js
+│   ├── 📁 assets
 │   └── 📄 main.jsx
 ├── ⚙️ .gitignore
 ├── 📝 README.md
