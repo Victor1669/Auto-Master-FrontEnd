@@ -1,44 +1,23 @@
-import { useReducer } from "react";
-
 import { useNavigate } from "react-router-dom";
 
 import Form, { Field } from "../../Components/Form/Form";
 
-import { CadastroUsuario } from "../../Services/Usuario";
+import { CadastroUsuario, useUsuario } from "../../Services/Usuario";
 
 import styles from "./SignIn.module.css";
 
-// REDUCER
-const initialState = {
-  email: "",
-  senha: "",
-};
-
-function reducer(state, action) {
-  const { type, payload } = action;
-
-  switch (type) {
-    case "email":
-      return { ...state, email: payload };
-    case "senha":
-      return { ...state, senha: payload };
-    default:
-      throw new Error("Erro ao fazer login!");
-  }
-}
-
 // FUNÇÃO PRINCIPAL
 export default function Login() {
-  const [{ email, senha }, dispatch] = useReducer(reducer, initialState);
-
+  const { state, dispatch } = useUsuario();
+  const { email, senha } = state;
   const navigate = useNavigate();
 
   async function handleSubmit(e) {
     e.preventDefault();
 
-    const body = { email, senha };
+    const { res, data } = await CadastroUsuario(state);
 
-    const { res } = await CadastroUsuario(body);
+    console.log(data.message);
 
     if (!res.ok) {
       return;
