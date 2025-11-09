@@ -1,4 +1,4 @@
-import { useReducer, useRef } from "react";
+import { useRef } from "react";
 
 import Form, { Field } from "../../../Components/Form/Form";
 
@@ -6,63 +6,23 @@ import styles from "./Veiculos.module.css";
 
 import { CadastroVeiculo } from "../../../Services/Veiculos";
 
-const initialState = {
-  placa: "",
-  modelo: "",
-  idCliente: "",
-  nomeCliente: "",
-  cor: "",
-};
-
-function reducer(state, action) {
-  const { type, payload } = action;
-
-  switch (type) {
-    case "placa":
-      return { ...state, placa: payload };
-    case "modelo":
-      return { ...state, modelo: payload };
-    case "idCliente":
-      return { ...state, idCliente: payload };
-    case "nomeCliente":
-      return { ...state, nomeCliente: payload };
-    case "cor":
-      return { ...state, cor: payload };
-
-    case "clear":
-      return {
-        ...state,
-        idCliente: "",
-        nomeCliente: "",
-        cor: "",
-        modelo: "",
-        placa: "",
-      };
-    default:
-      throw new Error("Ação inválida: " + type);
-  }
-}
+import { useVeiculo } from "../../../Hooks/useVeiculo";
 
 export default function Cad_Veiculo() {
-  const [{ idCliente, nomeCliente, cor, modelo, placa }, dispatch] = useReducer(
-    reducer,
-    initialState
-  );
+  const { state, dispatch } = useVeiculo();
+
+  const { idCliente, nomeCliente, modelo, cor, placa } = state;
 
   const ipt1 = useRef(null);
 
   async function handleSubmit(e) {
     e.preventDefault();
 
-    const body = { idCliente, nomeCliente, cor, modelo, placa };
+    const { res, data } = await CadastroVeiculo(state);
 
-    const { req } = await CadastroVeiculo(body);
+    console.log(data);
 
-    const msg = await req.json();
-
-    console.log(msg.message);
-
-    if (!req.ok) {
+    if (!res.ok) {
       return;
     }
 

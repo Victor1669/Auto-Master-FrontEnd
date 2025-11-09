@@ -2,9 +2,11 @@ import { useRef } from "react";
 
 import Form, { Field } from "../../../Components/Form/Form";
 
-import styles from "./Cad_Servicos.module.css";
+import { CadastrarServico } from "../../../Services/Servicos";
 
-import { CadastrarServico, useServicos } from "../../../Services/Servicos";
+import { useServicos } from "../../../Hooks/useServicos";
+
+import styles from "./Cad_Servicos.module.css";
 
 export default function Cad_Servicos() {
   const { state, dispatch } = useServicos();

@@ -2,9 +2,11 @@ import { useRef } from "react";
 
 import Form, { Field } from "../../../Components/Form/Form";
 
-import styles from "./Clientes.module.css";
+import { CadastrarCliente } from "../../../Services/Clientes";
 
-import { CadastrarCliente, useClientes } from "../../../Services/Clientes";
+import { useClientes } from "../../../Hooks/useClientes";
+
+import styles from "./Clientes.module.css";
 
 export default function Cad_Cliente() {
   const { state, dispatch } = useClientes();
