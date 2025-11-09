@@ -6,7 +6,10 @@
 │   ├── 📁 Components
 │   │   ├── 📁 Form
 │   │   ├── 📁 TabBar
-│   │   └── 📄 App.jsx
+│   │   ├── 📄 App.jsx
+│   │   └── 📄 ProtectedRoute.jsx
+│   ├── 📁 Context
+│   │   └── 📄 AuthContext.jsx
 │   ├── 📁 Hooks
 │   │   ├── 📄 useClientes.jsx
 │   │   ├── 📄 usePesquisaServico.jsx
