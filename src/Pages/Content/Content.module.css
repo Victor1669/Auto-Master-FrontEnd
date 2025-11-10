@@ -4,3 +4,13 @@
   display: grid;
   grid-template-rows: 100px 1fr;
 }
+.Outlet {
+  height: inherit;
+  margin-top: 80px;
+  padding: 0px 40px 40px;
+
+  overflow-y: auto;
+
+  display: grid;
+  place-items: center;
+}

@@ -1,6 +1,3 @@
-.Funcionarios {
-  padding: 20px;
-}
 .FuncionariosForm {
   width: 850px;
   height: fit-content;
@@ -8,7 +5,6 @@
 
   border: 2px solid white;
   margin: auto;
-  padding: 50px;
 
   position: relative;
 
@@ -20,6 +16,8 @@
 
   h3 {
     width: 100%;
+
+    margin-top: 2px;
 
     text-align: center;
     font-size: 28px;

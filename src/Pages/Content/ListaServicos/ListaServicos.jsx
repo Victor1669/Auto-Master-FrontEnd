@@ -1,3 +1,5 @@
+import { useRef, useEffect } from "react";
+
 import { usePesquisaServicos } from "../../../Hooks/usePesquisaServico";
 
 import { DateFormatter } from "../../../Utils/DateFormatter";
@@ -16,9 +18,16 @@ export default function ListaServicos() {
 }
 
 function SearchBar({ query, setQuery }) {
+  const ipt1 = useRef(null);
+
+  useEffect(() => {
+    ipt1.current.focus();
+  }, []);
+
   return (
     <div className={styles.SearchContainer}>
       <input
+        ref={ipt1}
         className={styles.SearchBar}
         type="search"
         placeholder="Buscar por um agendamento"
@@ -31,7 +40,7 @@ function SearchBar({ query, setQuery }) {
 
 function ServicoLista({ servicos }) {
   return (
-    <ul>
+    <ul className={styles.Lista}>
       {servicos.map((servico, index) => (
         <ServicoItem key={index} servico={servico} />
       ))}

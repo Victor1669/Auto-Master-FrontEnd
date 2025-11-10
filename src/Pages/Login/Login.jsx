@@ -6,10 +6,13 @@ import { LoginUsuario } from "../../Services/Usuario";
 
 import { useUsuario } from "../../Hooks/useUsuario";
 
+import { useAuth } from "../../Context/AuthContext";
+
 import styles from "./Login.module.css";
 
 export default function Login() {
   const { state, dispatch } = useUsuario();
+  const { login } = useAuth();
 
   const { email, senha } = state;
 
@@ -18,9 +21,14 @@ export default function Login() {
   async function handleSubmit(e) {
     e.preventDefault();
 
-    const { res, data } = await LoginUsuario(state);
+    const {
+      res,
+      data: { message, user },
+    } = await LoginUsuario(state);
 
-    console.log(data.message);
+    login(user);
+
+    console.log(message);
 
     if (!res.ok) {
       return;

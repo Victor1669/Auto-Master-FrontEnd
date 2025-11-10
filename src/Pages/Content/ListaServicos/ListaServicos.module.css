@@ -1,12 +1,17 @@
 .Servicos {
-  padding: 40px;
-
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  padding-top: 40px;
+  padding-bottom: 40px;
 }
 .SearchContainer {
-  position: relative;
+  width: 400px;
+  height: 50px;
+  position: fixed;
+  top: 20px;
+  left: calc(100vw / 13 * 6 + 20px);
 
   &::after {
     content: "";
@@ -23,7 +28,8 @@
   }
 }
 .SearchBar {
-  width: 400px;
+  width: inherit;
+  height: inherit;
   background-color: #b2b2b2;
 
   padding: 15px;
@@ -38,6 +44,9 @@
   &::-webkit-search-cancel-button {
     display: none;
   }
+}
+.Lista {
+  min-height: 80vh;
 }
 .ListaItem {
   background-color: var(--listItemBack);

@@ -4,7 +4,10 @@ import LandingPage from "../Pages/LandingPage/LandingPage";
 import Login from "../Pages/Login/Login";
 import Reset from "../Pages/Login/Reset/Reset";
 import SignIn from "../Pages/Cadastro/SignIn";
+
 import Content from "../Pages/Content/Content";
+import { ProtectedRoute } from "../Components/ProtectedRoute";
+
 import Home from "../Pages/Home";
 
 import Cad_Clientes from "../Pages/Content/Clientes/Cad_Clientes";
@@ -25,7 +28,14 @@ export default function App() {
         <Route path="login" element={<Login />} />
         <Route path="login/reset" element={<Reset />} />
         <Route path="signin" element={<SignIn />} />
-        <Route path="v1" element={<Content />}>
+        <Route
+          path="v1"
+          element={
+            <ProtectedRoute>
+              <Content />
+            </ProtectedRoute>
+          }
+        >
           <Route index element={<Navigate replace to="home" />} />
           <Route path="home" element={<Home />} />
           <Route path="clientes" element={<Cad_Clientes />} />

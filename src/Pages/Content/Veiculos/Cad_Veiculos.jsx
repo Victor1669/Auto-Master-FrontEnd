@@ -2,11 +2,11 @@ import { useRef } from "react";
 
 import Form, { Field } from "../../../Components/Form/Form";
 
-import styles from "./Veiculos.module.css";
-
 import { CadastroVeiculo } from "../../../Services/Veiculos";
 
 import { useVeiculo } from "../../../Hooks/useVeiculo";
+
+import styles from "./Cad_Veiculos.module.css";
 
 export default function Cad_Veiculo() {
   const { state, dispatch } = useVeiculo();
@@ -37,7 +37,7 @@ export default function Cad_Veiculo() {
         className={styles.VeiculosForm}
         title="Cadastrar veículos"
         btnText="Cadastrar"
-        btnClassName={styles.FormBtn}
+        btnClassName={styles.SubmitButton}
       >
         <div className={styles.pt1}>
           <IdField ref={ipt1} value={idCliente} dispatch={dispatch} />
