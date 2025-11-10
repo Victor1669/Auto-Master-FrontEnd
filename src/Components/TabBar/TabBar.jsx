@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 
 import styles from "./TabBar.module.css";
 
@@ -10,9 +10,14 @@ import TabPesq from "../../assets/tab-query-services.png";
 import TabAgen from "../../assets/tab-agendar.png";
 import TabLgot from "../../assets/tab-logout.png";
 
+import { useAuth } from "../../Context/AuthContext";
+
 export default function TabBar() {
+  const { logout } = useAuth();
+
   return (
     <nav className={styles.nav}>
+      <span></span>
       <NavLink to="home">
         <img src={TabHome} alt="" />
       </NavLink>
@@ -23,20 +28,22 @@ export default function TabBar() {
         <img src={TabVeic} alt="" />
       </NavLink>
       <NavLink to="funcionarios">
-        <img src={TabFunc} alt="" />
+        <img src={TabFunc} alt="" style={{ paddingLeft: 5, paddingTop: 5 }} />
       </NavLink>
       <NavLink to="servicos/agendar">
-        <img src={TabAgen} alt="" />
+        <img src={TabAgen} alt="" style={{ paddingTop: 5 }} />
       </NavLink>
-      <NavLink to="servicos/lista">
+      <Link to="servicos/lista">
         <img src={TabPesq} alt="" />
-      </NavLink>
+      </Link>
       <span></span>
       <span></span>
       <span></span>
-      <NavLink to="/login">
+      <span></span>
+      <span></span>
+      <button onClick={logout}>
         <img src={TabLgot} alt="" />
-      </NavLink>
+      </button>
     </nav>
   );
 }

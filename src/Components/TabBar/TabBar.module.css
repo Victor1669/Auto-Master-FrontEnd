@@ -1,5 +1,5 @@
 :root {
-  --linkSize: 40px;
+  --linkSize: 50px;
 }
 
 .nav {
@@ -9,16 +9,30 @@
 
   display: grid;
   place-items: center;
-  grid-template-columns: repeat(10, 1fr);
+  grid-template-columns: repeat(13, 1fr);
 
-  a {
+  position: fixed;
+  inset: 0 0 auto;
+
+  a,
+  button {
+    transition: background-color 0.6s;
     width: var(--linkSize);
     height: var(--linkSize);
+    background-color: var(--tabBarBack);
     display: block;
 
+    padding: 5px;
+    border-radius: 10px;
+
     img {
-      width: inherit;
-      height: inherit;
+      width: 100%;
+      height: 100%;
     }
+  }
+  button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
   }
 }
