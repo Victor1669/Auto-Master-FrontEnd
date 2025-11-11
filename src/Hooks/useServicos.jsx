@@ -1,4 +1,4 @@
-import { useReducer } from "react";
+import { useState, useReducer } from "react";
 
 function useServicos() {
   const initialState = {
@@ -40,7 +40,9 @@ function useServicos() {
 
   const [state, dispatch] = useReducer(reducer, initialState);
 
-  return { state, dispatch };
+  const [erro, setErro] = useState();
+
+  return { state: { ...state, erro, setErro }, dispatch };
 }
 
 export { useServicos };

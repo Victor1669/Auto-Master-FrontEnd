@@ -20,11 +20,7 @@
 │   │   ├── 📁 Cadastro
 │   │   ├── 📁 Content
 │   │   │   ├── 📁 Clientes
-│   │   │   ├── 📁 Funcionarios
 │   │   │   ├── 📁 ListaServicos
-│   │   │   │   ├── 📄 ListaHoje.jsx
-│   │   │   │   ├── 📄 ListaServicos.jsx
-│   │   │   │   └── 🎨 ListaServicos.module.css
 │   │   │   ├── 📁 Servicos
 │   │   │   │   ├── 📄 Cad_Servicos.jsx
 │   │   │   │   ├── 🎨 Cad_Servicos.module.css

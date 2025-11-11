@@ -104,6 +104,6 @@ h1 {
   background-color: white !important;
 
   img {
-    filter: invert(100);
+    filter: invert(1);
   }
 }

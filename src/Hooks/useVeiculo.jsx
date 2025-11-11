@@ -1,10 +1,9 @@
-import { useReducer } from "react";
+import { useState, useReducer } from "react";
 
 function useVeiculo() {
   const initialState = {
     placa: "",
     modelo: "",
-    idCliente: "",
     nomeCliente: "",
     cor: "",
   };
@@ -17,8 +16,6 @@ function useVeiculo() {
         return { ...state, placa: payload };
       case "modelo":
         return { ...state, modelo: payload };
-      case "idCliente":
-        return { ...state, idCliente: payload };
       case "nomeCliente":
         return { ...state, nomeCliente: payload };
       case "cor":
@@ -27,7 +24,6 @@ function useVeiculo() {
       case "clear":
         return {
           ...state,
-          idCliente: "",
           nomeCliente: "",
           cor: "",
           modelo: "",
@@ -40,7 +36,9 @@ function useVeiculo() {
 
   const [state, dispatch] = useReducer(reducer, initialState);
 
-  return { state, dispatch };
+  const [erro, setErro] = useState("");
+
+  return { state: { ...state, erro, setErro }, dispatch };
 }
 
 export { useVeiculo };

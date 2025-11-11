@@ -5,27 +5,27 @@ import Form, { Field } from "../../Components/Form/Form";
 import { CadastroUsuario } from "../../Services/Usuario";
 
 import { useUsuario } from "../../Hooks/useUsuario";
+import { useAuth } from "../../Context/AuthContext";
 
 import styles from "./SignIn.module.css";
 
 // FUNÇÃO PRINCIPAL
 export default function Login() {
+  const { login } = useAuth();
   const { state, dispatch } = useUsuario();
-  const { email, senha } = state;
+  const { email, senha, erro, setErro } = state;
+
   const navigate = useNavigate();
 
   async function handleSubmit(e) {
     e.preventDefault();
 
-    const { res, data } = await CadastroUsuario(state);
-
-    console.log(data.message);
-
-    if (!res.ok) {
-      return;
-    }
-
-    navigate("/v1");
+    await CadastroUsuario(state)
+      .then(({ res: { data } }) => {
+        login(data);
+        navigate("/v1");
+      })
+      .catch((res) => setErro(res.response.data.message));
   }
 
   return (
@@ -45,6 +45,7 @@ export default function Login() {
         className={styles.EnterForm}
         onSubmit={handleSubmit}
         btnText="Cadastrar"
+        errorMessage={erro}
       >
         <Field
           labelClassName="field"

@@ -14,27 +14,21 @@ export default function Login() {
   const { state, dispatch } = useUsuario();
   const { login } = useAuth();
 
-  const { email, senha } = state;
+  const { email, senha, erro, setErro } = state;
 
   const navigate = useNavigate();
 
   async function handleSubmit(e) {
     e.preventDefault();
 
-    const {
-      res,
-      data: { message, user },
-    } = await LoginUsuario(state);
-
-    login(user);
-
-    console.log(message);
-
-    if (!res.ok) {
-      return;
-    }
-
-    navigate("/v1");
+    await LoginUsuario(state)
+      .then(({ res }) => {
+        login(res.data.user);
+        navigate("/v1");
+      })
+      .catch((res) => {
+        setErro(res.response.data.message);
+      });
   }
 
   return (
@@ -54,6 +48,7 @@ export default function Login() {
         className={styles.EnterForm}
         onSubmit={handleSubmit}
         btnText="Entrar"
+        errorMessage={erro}
       >
         <Field
           labelClassName="field"

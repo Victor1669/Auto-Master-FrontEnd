@@ -4,13 +4,16 @@ export default function Form({
   onSubmit,
   className = "",
   btnClassName = "",
+  errorClassName = "",
   btnText,
   messageLink = <></>,
+  errorMessage,
 }) {
   return (
     <form className={`form ${className}`} onSubmit={onSubmit}>
       {title && <h3>{title}</h3>}
       {children}
+      <span className={`errorMessage ${errorClassName}`}>{errorMessage}</span>
       {btnText && (
         <button className={`form-btn ${btnClassName}`}>{btnText}</button>
       )}

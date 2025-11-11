@@ -1,27 +1,21 @@
 const BaseUrl = import.meta.env.VITE_BASE_URL;
 
-async function CadastrarServico(corpo) {
-  const body = JSON.stringify(corpo);
+import axios from "axios";
 
-  const res = await fetch(`${BaseUrl}/agendamentos/cadastrar`, {
-    method: "POST",
+async function CadastrarServico(body) {
+  const res = await axios.post(`${BaseUrl}/agendamentos/cadastrar`, body, {
     headers: {
       "Content-Type": "application/json",
     },
-    body,
   });
 
-  const data = await res.json();
-
-  return { res, data };
+  return { res };
 }
 
 async function ConsultarServicos() {
-  const res = await fetch(`${BaseUrl}/agendamentos/buscar`);
+  const res = await axios.get(`${BaseUrl}/agendamentos/buscar`);
 
-  const data = await res.json();
-
-  return { res, data };
+  return { res };
 }
 
 export { CadastrarServico, ConsultarServicos };

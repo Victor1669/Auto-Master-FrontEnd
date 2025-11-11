@@ -1,19 +1,15 @@
 const BaseUrl = import.meta.env.VITE_BASE_URL;
 
-async function CadastroVeiculo(corpo) {
-  const body = JSON.stringify(corpo);
+import axios from "axios";
 
-  const res = await fetch(`${BaseUrl}/veiculos/cadastrarVeiculo`, {
-    method: "POST",
+async function CadastroVeiculo(body) {
+  const res = await axios.post(`${BaseUrl}/veiculos/cadastrarVeiculo`, body, {
     headers: {
       "Content-Type": "application/json",
     },
-    body,
   });
 
-  const data = res.json();
-
-  return { res, data };
+  return { res };
 }
 
 export { CadastroVeiculo };
