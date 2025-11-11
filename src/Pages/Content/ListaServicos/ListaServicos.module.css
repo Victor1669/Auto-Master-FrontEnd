@@ -46,7 +46,8 @@
   }
 }
 .Lista {
-  min-height: 80vh;
+  min-height: 70vh;
+  width: fit-content;
 }
 .ListaItem {
   background-color: var(--listItemBack);
@@ -57,7 +58,7 @@
 
   padding: 20px;
   border-radius: 20px;
-  margin: 30px 0;
+  margin: 30px auto;
 
   figure {
     width: 125px;

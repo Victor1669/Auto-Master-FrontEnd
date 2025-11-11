@@ -39,7 +39,7 @@ function SearchBar({ query, setQuery }) {
   );
 }
 
-function ServicoLista({ servicos }) {
+export function ServicoLista({ servicos }) {
   return (
     <ul className={styles.Lista}>
       {servicos.map((servico, index) => (

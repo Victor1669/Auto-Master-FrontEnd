@@ -1,0 +1,37 @@
+.header {
+  height: 100px;
+  background-color: var(--landingHeaderBackColor);
+
+  position: fixed;
+  inset: auto 20px auto 0;
+  z-index: 999;
+
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  place-items: center;
+}
+.Logo {
+  height: 100px;
+  cursor: pointer;
+
+  span {
+    position: absolute;
+    top: -500px;
+  }
+}
+.nav {
+  width: 100%;
+
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  place-items: center;
+
+  a {
+    font-size: 28px;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

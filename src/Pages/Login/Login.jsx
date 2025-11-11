@@ -35,9 +35,10 @@ export default function Login() {
   return (
     <div className={styles.Login}>
       <header>
-        <h1>AUTOMASTER</h1>
+        <h2 className="EnterTitle">AUTOMASTER</h2>
         <CarBackgroundEnter />
       </header>
+
       <Form
         className={styles.EnterForm}
         onSubmit={handleSubmit}

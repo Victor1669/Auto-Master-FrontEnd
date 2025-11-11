@@ -2,9 +2,9 @@ import { useState } from "react";
 
 import { useNavigate } from "react-router-dom";
 
-import Form from "../../../Components/Form/Form";
+import Form from "/src/Components/Form/Form";
 
-import styles from "./Reset.module.css";
+import styles from "./ResetPassword.module.css";
 
 export default function Reset() {
   const [email, setEmail] = useState("");

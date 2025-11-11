@@ -1,0 +1,93 @@
+.section2 {
+  background-color: var(--section2BackColor);
+  height: 190svh;
+
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+}
+
+.Services {
+  padding: 0 40px 40px;
+  display: grid;
+  gap: 20px;
+
+  header {
+    display: inherit;
+    place-items: center;
+    grid-template-columns: repeat(2, 1fr);
+
+    h3 {
+      font-size: 36px;
+    }
+    p {
+      font-size: 24px;
+    }
+
+    img {
+      width: 350px;
+      height: 350px;
+
+      clip-path: polygon(80px 0, 100% 0, 100% 100%, 0 100%, 0 160px);
+    }
+  }
+}
+
+.CardContainer {
+  display: flex;
+  justify-content: space-evenly;
+}
+.Card {
+  width: 225px;
+  height: 250px;
+  background-color: #ed3c3c;
+
+  padding: 10px 20px;
+  border-radius: 15px;
+
+  display: grid;
+  place-items: center;
+
+  img {
+    width: 75px;
+  }
+  button {
+    background-color: #413838;
+    cursor: pointer;
+
+    border: none;
+    border-radius: 5px;
+    padding: 15px;
+
+    justify-self: start;
+  }
+}
+.About {
+  padding: 40px;
+  padding-top: 100px;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  place-items: center;
+
+  img {
+    width: 400px;
+    height: 400px;
+
+    clip-path: polygon(80px 0, 100% 0, 100% 100%, 0 100%, 0 160px);
+  }
+}
+.AboutText {
+  width: 80%;
+  text-align: justify;
+
+  display: grid;
+  gap: 20px;
+
+  h3 {
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+  p {
+    font-size: 24px;
+  }
+}

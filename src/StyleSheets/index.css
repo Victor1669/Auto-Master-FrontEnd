@@ -39,7 +39,7 @@ body {
   overflow: hidden;
 }
 
-h1 {
+.EnterTitle {
   font-size: 40px;
   font-weight: 200;
 
@@ -47,6 +47,7 @@ h1 {
   top: 80px;
   left: 80px;
 }
+
 .field {
   margin-bottom: 10px;
 
@@ -77,4 +78,7 @@ h1 {
   img {
     filter: invert(1);
   }
+}
+ul {
+  list-style-type: none;
 }

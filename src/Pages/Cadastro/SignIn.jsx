@@ -32,7 +32,7 @@ export default function Login() {
   return (
     <div className={styles.Signin}>
       <header>
-        <h1>AUTOMASTER</h1>
+        <h2 className="EnterTitle">AUTOMASTER</h2>
         <CarBackgroundEnter />
       </header>
 
