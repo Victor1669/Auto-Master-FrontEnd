@@ -1,0 +1,63 @@
+:root {
+  --CarHeight: 500px;
+
+  --detailsLeft: 110px;
+}
+
+.Container {
+  background-color: green;
+  position: absolute;
+  z-index: 0;
+
+  &.Enter {
+    top: 22vh;
+    left: 200px;
+  }
+  &.Content {
+    top: 45vh;
+    right: 700px;
+  }
+}
+.RedCar {
+  height: var(--CarHeight);
+  position: absolute;
+  z-index: 1;
+}
+.Detail {
+  display: block;
+  background-color: red;
+
+  position: absolute;
+
+  rotate: 27deg;
+}
+.one,
+.two {
+  top: 220px;
+  height: 600px;
+}
+
+.one {
+  width: 100px;
+  left: var(--detailsLeft);
+}
+
+.two {
+  width: 150px;
+  left: calc(var(--detailsLeft) + 170px);
+}
+
+.three,
+.four {
+  width: 150px;
+  height: 2000px;
+  top: -55vh;
+}
+
+.three {
+  left: 30px;
+}
+
+.four {
+  left: 300px;
+}

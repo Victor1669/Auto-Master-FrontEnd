@@ -6,6 +6,7 @@
 │   ├── 📁 Components
 │   │   ├── 📁 Form
 │   │   ├── 📁 TabBar
+│   │   ├── 📁 CarBackground
 │   │   ├── 📄 App.jsx
 │   │   └── 📄 ProtectedRoute.jsx
 │   ├── 📁 Context

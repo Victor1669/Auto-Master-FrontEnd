@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 
 import Form, { Field } from "../../Components/Form/Form";
+import { CarBackgroundEnter } from "../../Components/CarBackground/CarBackground";
 
 import { CadastroUsuario } from "../../Services/Usuario";
 
@@ -32,13 +33,7 @@ export default function Login() {
     <div className={styles.Signin}>
       <header>
         <h1>AUTOMASTER</h1>
-        <img
-          className="red-car enter"
-          src="/src/assets/red-car.png"
-          alt="red car"
-        />
-        <span className="detail one"></span>
-        <span className="detail two"></span>
+        <CarBackgroundEnter />
       </header>
 
       <Form

@@ -1,6 +1,7 @@
 import { useNavigate, Link } from "react-router-dom";
 
 import Form, { Field } from "../../Components/Form/Form";
+import { CarBackgroundEnter } from "../../Components/CarBackground/CarBackground";
 
 import { LoginUsuario } from "../../Services/Usuario";
 
@@ -35,15 +36,8 @@ export default function Login() {
     <div className={styles.Login}>
       <header>
         <h1>AUTOMASTER</h1>
+        <CarBackgroundEnter />
       </header>
-      <img
-        className="red-car enter"
-        src="/src/assets/red-car.png"
-        alt="red car"
-      />
-      <span className="detail one"></span>
-      <span className="detail two"></span>
-
       <Form
         className={styles.EnterForm}
         onSubmit={handleSubmit}
