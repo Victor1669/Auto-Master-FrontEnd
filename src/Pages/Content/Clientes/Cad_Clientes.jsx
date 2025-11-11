@@ -6,28 +6,29 @@ import { CadastrarCliente } from "../../../Services/Clientes";
 
 import { useClientes } from "../../../Hooks/useClientes";
 
-import styles from "./Clientes.module.css";
+import styles from "./Cad_Clientes.module.css";
 
 export default function Cad_Cliente() {
   const { state, dispatch } = useClientes();
 
-  const { nome, cpf, telefone } = state;
+  const { nome, cpf, telefone, erro, setErro } = state;
 
   const ipt1 = useRef(null);
 
   async function handleSubmit(e) {
     e.preventDefault();
 
-    const { res, data } = await CadastrarCliente({ nome, cpf, telefone });
-
-    console.log(data.message);
-
-    if (!res.ok) {
-      return;
-    }
-
-    dispatch({ type: "clear" });
-    ipt1.current.focus();
+    await CadastrarCliente(state)
+      .then(({ res }) => {
+        setErro("");
+        console.log(res.data.message);
+        dispatch({ type: "clear" });
+        ipt1.current.focus();
+      })
+      .catch((res) => {
+        setErro(res.response.data.message);
+        return;
+      });
   }
 
   return (
@@ -37,10 +38,11 @@ export default function Cad_Cliente() {
         title="Cadastro de clientes"
         onSubmit={handleSubmit}
         btnText="Cadastrar"
+        errorMessage={erro}
       >
         <Field
-          labelClassName="field"
           inputRef={ipt1}
+          labelClassName="field"
           label="Nome"
           value={nome}
           dispatch={dispatch}

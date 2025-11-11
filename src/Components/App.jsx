@@ -12,13 +12,10 @@ import Home from "../Pages/Home";
 
 import Cad_Clientes from "../Pages/Content/Clientes/Cad_Clientes";
 import Cad_Veiculos from "../Pages/Content/Veiculos/Cad_Veiculos";
-import Funcionarios from "../Pages/Content/Funcionarios/Funcionarios";
 
 import Servicos from "../Pages/Content/Servicos/Servicos";
 import Cad_Servicos from "../Pages/Content/Servicos/Cad_Servicos";
-
 import ListaServicos from "../Pages/Content/ListaServicos/ListaServicos";
-import ListaHoje from "../Pages/Content/ListaServicos/ListaServicos";
 
 export default function App() {
   return (
@@ -40,12 +37,10 @@ export default function App() {
           <Route path="home" element={<Home />} />
           <Route path="clientes" element={<Cad_Clientes />} />
           <Route path="veiculos" element={<Cad_Veiculos />} />
-          <Route path="funcionarios" element={<Funcionarios />} />
           <Route path="servicos" element={<Servicos />}>
             <Route index element={<Navigate replace to="lista" />} />
             <Route path="lista" element={<ListaServicos />} />
             <Route path="agendar" element={<Cad_Servicos />} />
-            <Route path="hoje" element={<ListaHoje />} />
           </Route>
         </Route>
       </Routes>

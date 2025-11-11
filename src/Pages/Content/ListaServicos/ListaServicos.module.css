@@ -11,7 +11,7 @@
   height: 50px;
   position: fixed;
   top: 20px;
-  left: calc(100vw / 13 * 6 + 20px);
+  left: calc(100vw / 13 * 5 + 20px);
 
   &::after {
     content: "";

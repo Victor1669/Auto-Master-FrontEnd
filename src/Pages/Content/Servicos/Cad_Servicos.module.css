@@ -14,7 +14,8 @@
   grid-template-areas:
     "title title"
     "fields fields"
-    "desc submit";
+    "desc submit"
+    "desc error";
 
   h3 {
     grid-area: title;
@@ -37,6 +38,12 @@
 
   input {
     height: 55px;
+
+    &::-webkit-calendar-picker-indicator {
+      filter: invert(1);
+      width: 25px;
+      height: 25px;
+    }
   }
 }
 .DescField,
@@ -56,12 +63,18 @@
   textarea {
     resize: none;
     width: 357px;
-    height: 120px;
+    height: 160px;
   }
 }
 .SubmitButton {
   grid-area: submit;
   width: 357px;
 
+  align-self: center;
+
   background-color: var(--normalButtonBack);
+}
+.Error {
+  width: 100%;
+  text-align: center;
 }

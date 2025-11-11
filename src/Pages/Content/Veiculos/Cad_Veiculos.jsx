@@ -11,23 +11,24 @@ import styles from "./Cad_Veiculos.module.css";
 export default function Cad_Veiculo() {
   const { state, dispatch } = useVeiculo();
 
-  const { idCliente, nomeCliente, modelo, cor, placa } = state;
+  const { nomeCliente, modelo, cor, placa, erro, setErro } = state;
 
   const ipt1 = useRef(null);
 
   async function handleSubmit(e) {
     e.preventDefault();
 
-    const { res, data } = await CadastroVeiculo(state);
-
-    console.log(data);
-
-    if (!res.ok) {
-      return;
-    }
-
-    dispatch({ type: "clear" });
-    ipt1.current.focus();
+    await CadastroVeiculo(state)
+      .then(({ res }) => {
+        setErro("");
+        ipt1.current.focus();
+        console.log(res.data.message);
+        dispatch({ type: "clear" });
+      })
+      .catch((res) => {
+        setErro(res.response.data.message);
+        return;
+      });
   }
 
   return (
@@ -38,10 +39,12 @@ export default function Cad_Veiculo() {
         title="Cadastrar veículos"
         btnText="Cadastrar"
         btnClassName={styles.SubmitButton}
+        errorMessage={erro}
+        errorClassName={styles.Error}
       >
         <div className={styles.pt1}>
-          <IdField ref={ipt1} value={idCliente} dispatch={dispatch} />
           <Field
+            inputRef={ipt1}
             labelClassName="field"
             label="Nome do Cliente"
             value={nomeCliente}
@@ -72,21 +75,5 @@ export default function Cad_Veiculo() {
         </div>
       </Form>
     </div>
-  );
-}
-
-function IdField({ value, ref, dispatch }) {
-  return (
-    <label className={styles.IdInput}>
-      <span>Id_Cliente: </span>
-      <input
-        ref={ref}
-        value={value}
-        onChange={(e) =>
-          dispatch({ type: "idCliente", payload: e.target.value })
-        }
-        type="text"
-      />
-    </label>
   );
 }

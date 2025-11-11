@@ -7,12 +7,13 @@ import { DateFormatter } from "../../../Utils/DateFormatter";
 import styles from "./ListaServicos.module.css";
 
 export default function ListaServicos() {
-  const { query, setQuery, isLoading, servicos } = usePesquisaServicos();
+  const { isLoading, servicos, query, setQuery, mensagem } =
+    usePesquisaServicos();
 
   return (
     <div className={styles.Servicos}>
       <SearchBar query={query} setQuery={setQuery} />
-      {!isLoading ? <ServicoLista servicos={servicos} /> : <></>}
+      {!isLoading ? <ServicoLista servicos={servicos} /> : <>{mensagem}</>}
     </div>
   );
 }
@@ -76,7 +77,10 @@ function ServicoItem({ servico }) {
           <span>Cliente: {nomeCliente}</span>
           <span>Veículo: {modelo}</span>
           <span>Data de Solicitação: {dataFormatada}</span>
-          <span>Previsão de entrega: {previsaoEntrega} dias</span>
+          <span>
+            Previsão de entrega:{" "}
+            {previsaoEntrega > 0 ? previsaoEntrega + " dias" : "Hoje"}
+          </span>
           <span>
             Descrição: {descFormatado}
             {descricao.length > 20 ? "..." : ""}

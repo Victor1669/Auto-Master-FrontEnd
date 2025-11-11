@@ -1,19 +1,14 @@
 const BaseUrl = import.meta.env.VITE_BASE_URL;
 
-async function CadastrarCliente(corpo) {
-  const body = JSON.stringify(corpo);
+import axios from "axios";
 
-  const res = await fetch(`${BaseUrl}/clientes/cadastrarCliente`, {
-    method: "POST",
+async function CadastrarCliente(body) {
+  const res = await axios.post(`${BaseUrl}/clientes/cadastrarCliente`, body, {
     headers: {
       "Content-Type": "application/json",
     },
-    body,
   });
-
-  const data = await res.json();
-
-  return { res, data };
+  return { res };
 }
 
 export { CadastrarCliente };

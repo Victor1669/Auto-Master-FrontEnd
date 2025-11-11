@@ -11,18 +11,18 @@ import styles from "./Cad_Servicos.module.css";
 export default function Cad_Servicos() {
   const { state, dispatch } = useServicos();
 
-  const { placa, data, hora, preco, descricao } = state;
+  const { placa, data, hora, preco, descricao, erro, setErro } = state;
 
   const ipt1 = useRef(null);
 
   async function handleSubmit(e) {
     e.preventDefault();
 
-    const { res, data } = await CadastrarServico(state);
+    const { res } = await CadastrarServico(state).catch((res) =>
+      setErro(res.response.data.message)
+    );
 
-    console.log(data.message);
-
-    if (!res.ok) return;
+    if (res.status >= 300) return;
 
     ipt1.current.focus();
     dispatch({ type: "clear" });
@@ -36,6 +36,8 @@ export default function Cad_Servicos() {
         title="Agendamento de serviço"
         btnText="Agendar"
         btnClassName={styles.SubmitButton}
+        errorMessage={erro}
+        errorClassName={styles.Error}
       >
         <div className={styles.FieldSet}>
           <Field

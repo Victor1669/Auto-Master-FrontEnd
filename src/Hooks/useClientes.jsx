@@ -1,4 +1,4 @@
-import { useReducer } from "react";
+import { useState, useReducer } from "react";
 
 function useClientes() {
   const initialState = {
@@ -25,7 +25,9 @@ function useClientes() {
   }
   const [state, dispatch] = useReducer(reducer, initialState);
 
-  return { state, dispatch };
+  const [erro, setErro] = useState("");
+
+  return { state: { ...state, erro, setErro }, dispatch };
 }
 
 export { useClientes };

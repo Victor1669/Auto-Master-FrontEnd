@@ -27,9 +27,6 @@ export default function TabBar() {
       <NavLink to="veiculos">
         <img src={TabVeic} alt="" />
       </NavLink>
-      <NavLink to="funcionarios">
-        <img src={TabFunc} alt="" style={{ paddingLeft: 5, paddingTop: 5 }} />
-      </NavLink>
       <NavLink to="servicos/agendar">
         <img src={TabAgen} alt="" style={{ paddingTop: 5 }} />
       </NavLink>
