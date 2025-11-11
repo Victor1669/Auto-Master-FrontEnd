@@ -1,8 +1,8 @@
 :root {
-  --enterFormBack: #2c2c2ce3;
+  --formBack: #2c2c2ce3;
+
   --enterButtonBack: #f40707;
 
-  --normalFormBack: #4a4a4a96;
   --normalButtonBack: #e82f2f;
 }
 
@@ -10,12 +10,15 @@
   border-radius: 20px;
   z-index: 2;
   padding: 30px;
+  background-color: var(--formBack);
 
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 20px;
+
+  position: relative;
 
   & > * {
     width: 60%;

@@ -11,7 +11,7 @@
   place-items: center;
   grid-template-columns: repeat(13, 1fr);
 
-  position: fixed;
+  position: relative;
   inset: 0 0 auto;
 
   a,

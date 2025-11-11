@@ -11,7 +11,6 @@
   grid-area: Form;
   width: 480px;
   height: 80%;
-  background: var(--enterFormBack);
 
   button {
     background-color: var(--enterButtonBack);

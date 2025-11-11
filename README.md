@@ -4,10 +4,15 @@
 ├── 📁 public
 ├── 📁 src
 │   ├── 📁 Components
+│   │   ├── 📁 CarBackground
 │   │   ├── 📁 Form
+│   │   ├── 📁 LandingHeader
+│   │   ├── 📁 LandingSections
 │   │   ├── 📁 TabBar
 │   │   ├── 📄 App.jsx
-│   │   └── 📄 ProtectedRoute.jsx
+│   │   ├── 📄 ProtectedRoute.jsx
+│   │   ├── 📄 Servicos.jsx
+│   │   └── 📄 StarRating.jsx
 │   ├── 📁 Context
 │   │   └── 📄 AuthContext.jsx
 │   ├── 📁 Hooks
@@ -22,14 +27,11 @@
 │   │   │   ├── 📁 Clientes
 │   │   │   ├── 📁 ListaServicos
 │   │   │   ├── 📁 Servicos
-│   │   │   │   ├── 📄 Cad_Servicos.jsx
-│   │   │   │   ├── 🎨 Cad_Servicos.module.css
-│   │   │   │   └── 📄 Servicos.jsx
 │   │   │   ├── 📁 Veiculos
+│   │   │   └── 📄 Home.jsx
 │   │   ├── 📁 LandingPage
-│   │   ├── 📁 Login
-│   │   │   ├── 📁 Reset
-│   │   └── 📄 Home.jsx
+│   │   └── 📁 Login
+│   │       ├── 📁 ResetPassword
 │   ├── 📁 Services
 │   │   ├── 📄 Clientes.jsx
 │   │   ├── 📄 Servicos.jsx

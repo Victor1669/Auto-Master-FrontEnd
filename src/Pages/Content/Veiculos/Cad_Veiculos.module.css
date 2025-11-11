@@ -3,10 +3,7 @@
   height: 100%;
   margin: auto;
 
-  background-color: var(--normalFormBack);
   border: 2px solid white;
-
-  position: relative;
 
   display: grid;
   justify-content: space-between;

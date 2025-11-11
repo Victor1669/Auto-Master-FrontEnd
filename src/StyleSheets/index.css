@@ -39,36 +39,7 @@ body {
   overflow: hidden;
 }
 
-.red-car {
-  width: 800px;
-  animation: carSlide 1s linear forwards;
-
-  z-index: 1;
-  position: absolute;
-  top: 150px;
-
-  &.enter {
-    left: 100px;
-  }
-}
-.detail {
-  height: 500px;
-
-  position: absolute;
-  background-color: var(--appDetailBack);
-  rotate: 0 0 1 27deg;
-  top: 50%;
-
-  &.one {
-    width: 110px;
-    left: 230px;
-  }
-  &.two {
-    width: 140px;
-    left: 410px;
-  }
-}
-h1 {
+.EnterTitle {
   font-size: 40px;
   font-weight: 200;
 
@@ -76,6 +47,7 @@ h1 {
   top: 80px;
   left: 80px;
 }
+
 .field {
   margin-bottom: 10px;
 
@@ -106,4 +78,7 @@ h1 {
   img {
     filter: invert(1);
   }
+}
+ul {
+  list-style-type: none;
 }

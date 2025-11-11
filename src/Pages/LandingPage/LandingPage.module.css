@@ -2,19 +2,8 @@
   --landingHeaderBackColor: #69696978;
   --section2BackColor: #313131;
 }
-
-.section1 {
-  height: 100svh;
-  background: url("../../assets/landing-image.jpg") no-repeat;
-  background-size: 100% 100%;
-}
-
-.header {
-  height: 128px;
-  background-color: var(--landingHeaderBackColor);
-}
-
-.section2 {
-  background-color: var(--section2BackColor);
-  height: 200svh;
+.Main {
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: inherit;
 }
