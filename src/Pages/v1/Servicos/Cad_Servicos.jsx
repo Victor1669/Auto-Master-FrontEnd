@@ -2,7 +2,7 @@ import { useRef } from "react";
 
 import Form, { Field } from "../../../Components/Form/Form";
 
-import { CadastrarServico } from "../../../Services/Servicos";
+import { CadastrarServico } from "../../../Services/Servicos.js";
 
 import { useServicos } from "../../../Hooks/useServicos";
 
@@ -18,14 +18,19 @@ export default function Cad_Servicos() {
   async function handleSubmit(e) {
     e.preventDefault();
 
-    const { res } = await CadastrarServico(state).catch((res) =>
-      setErro(res.response.data.message)
-    );
+    const { message, success } = await CadastrarServico({
+      placa,
+      data,
+      hora,
+      preco,
+      descricao,
+    });
 
-    if (res.status >= 300) return;
-
-    ipt1.current.focus();
-    dispatch({ type: "clear" });
+    if (success) {
+      ipt1.current.focus();
+      dispatch({ type: "clear" });
+      setErro("");
+    } else setErro(message);
   }
 
   return (

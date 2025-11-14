@@ -18,17 +18,18 @@ export default function Cad_Veiculo() {
   async function handleSubmit(e) {
     e.preventDefault();
 
-    await CadastroVeiculo(state)
-      .then(({ res }) => {
-        setErro("");
-        ipt1.current.focus();
-        console.log(res.data.message);
-        dispatch({ type: "clear" });
-      })
-      .catch((res) => {
-        setErro(res.response.data.message);
-        return;
-      });
+    const { message, success } = await CadastroVeiculo({
+      nomeCliente,
+      modelo,
+      cor,
+      placa,
+    });
+
+    if (success) {
+      setErro("");
+      ipt1.current.focus();
+      dispatch({ type: "clear" });
+    } else setErro(message);
   }
 
   return (

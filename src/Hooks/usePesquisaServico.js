@@ -4,6 +4,7 @@ import { ConsultarServicos } from "../Services/Servicos";
 
 function usePesquisaServicos() {
   const [query, setQuery] = useState("");
+  const [tipoFiltro, setTipoFiltro] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [servicos, setServicos] = useState([]);
   const [mensagem, setMensagem] = useState("");
@@ -17,20 +18,31 @@ function usePesquisaServicos() {
         .then(({ res: { data } }) => {
           setServicos(
             data.filter((s) =>
-              s.descricao.toLowerCase().includes(query.toLowerCase())
+              s[tipoFiltro || "descricao"]
+                .toLowerCase()
+                .includes(query.toLowerCase())
             )
           );
+          setMensagem("");
         })
         .catch(({ res }) => {
           console.log(res);
-          setMensagem("Erro");
+          setMensagem("Erro ao consultar dados!");
         })
         .finally(() => setIsLoading(false));
     }
     handlePesquisa();
-  }, [query]);
+  }, [query, tipoFiltro]);
 
-  return { query, setQuery, mensagem, isLoading, servicos };
+  return {
+    query,
+    setQuery,
+    mensagem,
+    isLoading,
+    servicos,
+    tipoFiltro,
+    setTipoFiltro,
+  };
 }
 
 export { usePesquisaServicos };

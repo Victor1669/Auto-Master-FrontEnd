@@ -7,7 +7,7 @@
   padding-bottom: 40px;
 }
 .SearchContainer {
-  width: 400px;
+  width: 350px;
   height: 50px;
   position: fixed;
   top: 20px;
@@ -45,41 +45,56 @@
     display: none;
   }
 }
+.Filter {
+  padding: 10px;
+
+  color: black;
+
+  position: fixed;
+  top: 25px;
+  left: calc(100vw / 13 * 9 + 20px);
+
+  option {
+    color: inherit;
+  }
+}
+
 .Lista {
   min-height: 70vh;
   width: fit-content;
-}
-.ListaItem {
-  background-color: var(--listItemBack);
 
-  display: flex;
-  align-items: center;
-  gap: 40px;
+  .ListaItem {
+    background-color: var(--listItemBack);
 
-  padding: 20px;
-  border-radius: 20px;
-  margin: 30px auto;
+    display: flex;
+    align-items: center;
+    gap: 40px;
 
-  figure {
-    width: 125px;
-    height: 125px;
-    background-color: #9f9f9f;
+    padding: 20px;
+    border-radius: 20px;
+    margin: 30px auto;
 
-    border-radius: inherit;
+    figure {
+      width: 125px;
+      height: 125px;
+      background-color: #9f9f9f;
 
-    display: grid;
-    place-items: center;
+      border-radius: inherit;
 
-    img {
-      width: 50%;
-      height: 50%;
+      display: grid;
+      place-items: center;
+
+      img {
+        width: 50%;
+        height: 50%;
+      }
     }
-  }
 
-  p {
-    width: 300px;
-    display: grid;
-    gap: 10px;
+    p {
+      width: 300px;
+      display: grid;
+      gap: 10px;
+    }
   }
 }
 .ItemContent {
@@ -93,16 +108,17 @@
   * {
     color: black;
   }
-}
-.ItemStatus {
-  width: 190px;
 
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 10px;
+  .ItemStatus {
+    width: 190px;
 
-  * {
-    width: inherit;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 10px;
+
+    * {
+      width: inherit;
+    }
   }
 }

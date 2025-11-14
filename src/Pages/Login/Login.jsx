@@ -1,13 +1,11 @@
 import { useNavigate, Link } from "react-router-dom";
+import { useUsuario } from "../../Hooks/useUsuario";
+import { useAuth } from "../../Context/AuthContext";
 
 import Form, { Field } from "../../Components/Form/Form";
 import { CarBackgroundEnter } from "../../Components/CarBackground/CarBackground";
 
-import { LoginUsuario } from "../../Services/Usuario";
-
-import { useUsuario } from "../../Hooks/useUsuario";
-
-import { useAuth } from "../../Context/AuthContext";
+import { LoginUsuario } from "../../Services/Usuario.js";
 
 import styles from "./Login.module.css";
 
@@ -22,14 +20,12 @@ export default function Login() {
   async function handleSubmit(e) {
     e.preventDefault();
 
-    await LoginUsuario(state)
-      .then(({ res }) => {
-        login(res.data.user);
-        navigate("/v1");
-      })
-      .catch((res) => {
-        setErro(res.response.data.message);
-      });
+    const { user, resOk, message } = await LoginUsuario({ email, senha });
+
+    if (resOk) {
+      login(user);
+      navigate("/v1");
+    } else setErro(message);
   }
 
   return (

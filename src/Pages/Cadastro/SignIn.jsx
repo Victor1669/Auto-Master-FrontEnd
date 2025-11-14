@@ -1,11 +1,11 @@
 import { useNavigate } from "react-router-dom";
+import { useUsuario } from "../../Hooks/useUsuario";
 
 import Form, { Field } from "../../Components/Form/Form";
 import { CarBackgroundEnter } from "../../Components/CarBackground/CarBackground";
 
-import { CadastroUsuario } from "../../Services/Usuario";
+import { CadastroUsuario } from "../../Services/Usuario.js";
 
-import { useUsuario } from "../../Hooks/useUsuario";
 import { useAuth } from "../../Context/AuthContext";
 
 import styles from "./SignIn.module.css";
@@ -21,12 +21,12 @@ export default function Login() {
   async function handleSubmit(e) {
     e.preventDefault();
 
-    await CadastroUsuario(state)
-      .then(({ res: { data } }) => {
-        login(data);
-        navigate("/v1");
-      })
-      .catch((res) => setErro(res.response.data.message));
+    const { user, message, resOk } = await CadastroUsuario({ email, senha });
+
+    if (resOk && user) {
+      login(user);
+      navigate("/v1");
+    } else setErro(message);
   }
 
   return (

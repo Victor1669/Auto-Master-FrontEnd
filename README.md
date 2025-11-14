@@ -5,51 +5,30 @@
 ├── 📁 src
 │   ├── 📁 Components
 │   │   ├── 📁 CarBackground
+│   │   ├── 📁 Content
 │   │   ├── 📁 Form
 │   │   ├── 📁 LandingHeader
 │   │   ├── 📁 LandingSections
 │   │   ├── 📁 TabBar
 │   │   ├── 📄 App.jsx
-│   │   ├── 📄 ProtectedRoute.jsx
-│   │   ├── 📄 Servicos.jsx
-│   │   └── 📄 StarRating.jsx
 │   ├── 📁 Context
-│   │   └── 📄 AuthContext.jsx
 │   ├── 📁 Hooks
-│   │   ├── 📄 useClientes.jsx
-│   │   ├── 📄 usePesquisaServico.jsx
-│   │   ├── 📄 useServicos.jsx
-│   │   ├── 📄 useUsuario.jsx
-│   │   └── 📄 useVeiculo.jsx
 │   ├── 📁 Pages
 │   │   ├── 📁 Cadastro
-│   │   ├── 📁 Content
-│   │   │   ├── 📁 Clientes
-│   │   │   ├── 📁 ListaServicos
-│   │   │   ├── 📁 Servicos
-│   │   │   ├── 📁 Veiculos
-│   │   │   └── 📄 Home.jsx
 │   │   ├── 📁 LandingPage
-│   │   └── 📁 Login
-│   │       ├── 📁 ResetPassword
+│   │   ├── 📁 Login
+│   │   │   ├── 📁 ResetPassword
+│   │   └── 📁 v1
+│   │       ├── 📁 Clientes
+│   │       ├── 📁 ListaServicos
+│   │       ├── 📁 Servicos
+│   │       ├── 📁 Veiculos
+│   │       └── 📄 Home.jsx
 │   ├── 📁 Services
-│   │   ├── 📄 Clientes.jsx
-│   │   ├── 📄 Servicos.jsx
-│   │   ├── 📄 Usuario.jsx
-│   │   └── 📄 Veiculos.jsx
 │   ├── 📁 StyleSheets
-│   │   └── 🎨 index.css
 │   ├── 📁 Utils
-│   │   └── 📄 DateFormatter.js
 │   ├── 📁 assets
 │   └── 📄 main.jsx
-├── ⚙️ .gitignore
-├── 📝 README.md
-├── 📄 eslint.config.js
-├── 🌐 index.html
-├── ⚙️ package.json
-├── ⚙️ pnpm-lock.yaml
-└── 📄 vite.config.js
 ```
 
 ## IMPORTANTE:
@@ -59,7 +38,7 @@
 **Gerenciador de pacotes**: PNPM
 Bundler: Vite
 
-**Bibliotecas**: react-router-dom, axios
+**Bibliotecas**: react-router-dom, axios, react-toatify
 
 #### Para instalar o pnpm:
 

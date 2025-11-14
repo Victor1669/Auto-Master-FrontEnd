@@ -1,10 +1,9 @@
 import { useRef } from "react";
+import { useClientes } from "../../../Hooks/useClientes";
 
 import Form, { Field } from "../../../Components/Form/Form";
 
-import { CadastrarCliente } from "../../../Services/Clientes";
-
-import { useClientes } from "../../../Hooks/useClientes";
+import { CadastrarCliente } from "../../../Services/Clientes.js";
 
 import styles from "./Cad_Clientes.module.css";
 
@@ -18,17 +17,13 @@ export default function Cad_Cliente() {
   async function handleSubmit(e) {
     e.preventDefault();
 
-    await CadastrarCliente(state)
-      .then(({ res }) => {
-        setErro("");
-        console.log(res.data.message);
-        dispatch({ type: "clear" });
-        ipt1.current.focus();
-      })
-      .catch((res) => {
-        setErro(res.response.data.message);
-        return;
-      });
+    const { message, success } = await CadastrarCliente(state);
+
+    if (success) {
+      setErro("");
+      dispatch({ type: "clear" });
+      ipt1.current.focus();
+    } else setErro(message);
   }
 
   return (

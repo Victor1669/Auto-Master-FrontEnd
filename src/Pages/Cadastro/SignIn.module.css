@@ -9,7 +9,7 @@
 
 .EnterForm {
   grid-area: Form;
-  width: 480px;
+  width: 560px;
   height: 80%;
 
   button {

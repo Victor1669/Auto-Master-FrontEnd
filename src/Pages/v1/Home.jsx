@@ -1,4 +1,4 @@
-import { usePesquisaServicos } from "../../Hooks/usePesquisaServico";
+import { usePesquisaServicos } from "../../Hooks/usePesquisaServico.js";
 
 import { ServicoLista } from "./ListaServicos/ListaServicos";
 
@@ -8,7 +8,9 @@ export default function Home() {
   const { servicos } = usePesquisaServicos();
 
   const servicosHoje = servicos.filter((s) => {
-    const dataFormatada = DateFormatter(new Date(s.data));
+    const data = new Date(s.data);
+    const dataFormatada = DateFormatter(data.setDate(data.getDate() + 1));
+
     const dataHoje = DateFormatter(new Date());
 
     return dataHoje == dataFormatada;
