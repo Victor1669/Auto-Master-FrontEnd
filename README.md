@@ -33,6 +33,12 @@
 
 ## IMPORTANTE:
 
+### Esse projeto usa variáveis de ambiente
+
+#### Variável para colocar o link onde o BackEnd está rodando:
+
+- VITE_BASE_URL
+
 ### É necessário ter o Node na versão 20+, e pnpm baixados
 
 **Gerenciador de pacotes**: PNPM
