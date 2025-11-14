@@ -1,21 +1,30 @@
-import { useState } from "react";
-
 import { useNavigate } from "react-router-dom";
+import { useUsuario } from "../../../Hooks/useUsuario.js";
 
-import Form from "/src/Components/Form/Form";
+import Form, { Field } from "../../../Components/Form/Form.jsx";
+
+import { ResetSenha } from "../../../Services/Usuario.js";
 
 import styles from "./ResetPassword.module.css";
 
 export default function Reset() {
-  const [email, setEmail] = useState("");
+  const { state, dispatch } = useUsuario();
+
+  const { email, senha, erro, setErro } = state;
 
   const navigate = useNavigate();
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
-    if (!email) return;
-    console.log(email);
-    navigate("/login");
+    if (!email || !senha) return;
+
+    const body = { email, novaSenha: senha };
+
+    const { message, success } = await ResetSenha(body);
+
+    if (success) {
+      navigate("/login");
+    } else setErro(message);
   }
 
   return (
@@ -23,13 +32,17 @@ export default function Reset() {
       <Form
         onSubmit={handleSubmit}
         className={styles.ResetForm}
-        title="Digite seu email para enviarmos a nova senha:"
+        title="Digite seu email e sua nova senha para enviarmos a nova senha:"
         btnText="Enviar"
+        errorMessage={erro}
       >
-        <input
-          type="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
+        <Field label="Email:" type="email" value={email} dispatch={dispatch} />
+        <Field
+          label="Nova senha:"
+          type="senha"
+          value={senha}
+          dispatch={dispatch}
+          inputType="password"
         />
       </Form>
     </div>

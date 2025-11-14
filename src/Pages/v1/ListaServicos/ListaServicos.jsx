@@ -1,19 +1,30 @@
 import { useRef, useEffect } from "react";
-
-import { usePesquisaServicos } from "../../../Hooks/usePesquisaServico";
+import { usePesquisaServicos } from "../../../Hooks/usePesquisaServico.js";
 
 import { DateFormatter } from "../../../Utils/DateFormatter";
 
 import styles from "./ListaServicos.module.css";
 
 export default function ListaServicos() {
-  const { isLoading, servicos, query, setQuery, mensagem } =
-    usePesquisaServicos();
+  const {
+    isLoading,
+    servicos,
+    query,
+    setQuery,
+    mensagem,
+    tipoFiltro,
+    setTipoFiltro,
+  } = usePesquisaServicos();
 
   return (
     <div className={styles.Servicos}>
       <SearchBar query={query} setQuery={setQuery} />
-      {!isLoading ? <ServicoLista servicos={servicos} /> : <>{mensagem}</>}
+      <FilterContainer tipoFiltro={tipoFiltro} setTipoFiltro={setTipoFiltro} />
+      {!isLoading ? (
+        <ServicoLista servicos={servicos} mensagem={mensagem} />
+      ) : (
+        <>{mensagem}</>
+      )}
     </div>
   );
 }
@@ -39,12 +50,41 @@ function SearchBar({ query, setQuery }) {
   );
 }
 
-export function ServicoLista({ servicos }) {
+function FilterContainer({ tipoFiltro, setTipoFiltro }) {
+  const tiposFiltro = [
+    ["Nome do cliente", "nomeCliente"],
+    ["Modelo do veículo", "modelo"],
+    ["Descrição", "descricao"],
+    ["Status", "status"],
+  ];
+  return (
+    <select
+      className={styles.Filter}
+      value={tipoFiltro || "*"}
+      onChange={(e) => setTipoFiltro(e.target.value)}
+    >
+      <option value="*" disabled>
+        Tipo de Filtro
+      </option>
+      {tiposFiltro.map(([texto, valor]) => (
+        <option key={texto} value={valor}>
+          {texto}
+        </option>
+      ))}
+    </select>
+  );
+}
+
+export function ServicoLista({ servicos, mensagem }) {
   return (
     <ul className={styles.Lista}>
-      {servicos.map((servico, index) => (
-        <ServicoItem key={index} servico={servico} />
-      ))}
+      {servicos.length ? (
+        servicos.map((servico, index) => (
+          <ServicoItem key={index} servico={servico} />
+        ))
+      ) : (
+        <p>{mensagem || "Não há resultados!"}</p>
+      )}
     </ul>
   );
 }
@@ -60,7 +100,9 @@ function ServicoItem({ servico }) {
   );
 
   // CONVERSÃO DA DATA
-  const dataFormatada = DateFormatter(new Date(data));
+  const dataFormatada = DateFormatter(
+    diaEntrega.setDate(diaEntrega.getDate() + 1)
+  );
 
   const statusEmoji =
     status === "concluído" ? "🟢" : status === "pendente" ? "🟡" : "🔴";
@@ -79,7 +121,9 @@ function ServicoItem({ servico }) {
           <span>Data de Solicitação: {dataFormatada}</span>
           <span>
             Previsão de entrega:{" "}
-            {previsaoEntrega > 0 ? previsaoEntrega + " dias" : "Hoje"}
+            {previsaoEntrega > 0
+              ? previsaoEntrega + " dias"
+              : previsaoEntrega < 1 && "Hoje"}
           </span>
           <span>
             Descrição: {descFormatado}

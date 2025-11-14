@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-
 import { Outlet, useNavigate } from "react-router-dom";
 
 import TabBar from "../../Components/TabBar/TabBar";
@@ -22,6 +21,7 @@ export default function Content() {
   return (
     <div className={styles.content}>
       <CarBackgroundContent />
+
       <TabBar />
       <div className={styles.Outlet}>
         <Outlet />
