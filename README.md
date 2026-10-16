@@ -1,95 +1,32 @@
-# ESTRUTURA DE PASTAS:
+# React + TypeScript + Vite
 
-```
-├── 📁 public
-├── 📁 src
-│   ├── 📁 Components
-│   │   ├── 📁 CarBackground
-│   │   ├── 📁 Content
-│   │   ├── 📁 Form
-│   │   ├── 📁 LandingHeader
-│   │   ├── 📁 LandingSections
-│   │   ├── 📁 TabBar
-│   │   ├── 📄 App.jsx
-│   ├── 📁 Context
-│   ├── 📁 Hooks
-│   ├── 📁 Pages
-│   │   ├── 📁 Cadastro
-│   │   ├── 📁 LandingPage
-│   │   ├── 📁 Login
-│   │   │   ├── 📁 ResetPassword
-│   │   └── 📁 v1
-│   │       ├── 📁 Clientes
-│   │       ├── 📁 ListaServicos
-│   │       ├── 📁 Servicos
-│   │       ├── 📁 Veiculos
-│   │       └── 📄 Home.jsx
-│   ├── 📁 Services
-│   ├── 📁 StyleSheets
-│   ├── 📁 Utils
-│   ├── 📁 assets
-│   └── 📄 main.jsx
+This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+
+Currently, two official plugins are available:
+
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+
+## React Compiler
+
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+
+## Expanding the Oxlint configuration
+
+If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+
+```json
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "plugins": ["react", "typescript", "oxc"],
+  "options": {
+    "typeAware": true
+  },
+  "rules": {
+    "react/rules-of-hooks": "error",
+    "react/only-export-components": ["warn", { "allowConstantExport": true }]
+  }
+}
 ```
 
-## IMPORTANTE:
-
-### Esse projeto usa variáveis de ambiente
-
-#### Variável para colocar o link onde o BackEnd está rodando:
-
-- VITE_BASE_URL
-
-### É necessário ter o Node na versão 20+, e pnpm baixados
-
-**Gerenciador de pacotes**: PNPM
-Bundler: Vite
-
-**Bibliotecas**: react-router-dom, axios, react-toatify
-
-#### Para instalar o pnpm:
-
-- npm install -g pnpm
-
-#### Para criar uma cópia local do repositório:
-
-- git clone https://github.com/Victor1669/Auto-Master-FrontEnd
-
-### Convenção de branchs:
-
-- feat: adiciona/altera conteúdo
-- fix: correção de bugs/erros
-- docs: atualiza README
-
----
-
-#### Baixar as dependências:
-
-- pnpm install
-
-#### Iniciar o servidor com o código (dentro do projeto):
-
-- code . & pnpm vite
-
-#### Para criar uma branch:
-
-- git checkout -b **NOME_BRANCH**
-
-(Se a branch não existir, vai ser criada uma nova e você vai ser movido pra ela)
-
-#### Quando o dia começar e você for fazer alguma coisa, sempre deixe a branch principal atualizada:
-
-- git checkout master
-- git pull
-- git checkout -b **BRANCH_ANTERIOR**
-
-#### Enviar as mudanças:
-
-- git checkout -b **NOME_BRANCH** (Se você não estiver na branch correta)
-- git add .
-- git commit -m **TEXTO_COMMIT**
-- git push origin **NOME_BRANCH**
-
-##### Mande uma pull request com título e descrição no GitHub e depois:
-
-- git fetch origin
-- git rebase origin/master
+See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.

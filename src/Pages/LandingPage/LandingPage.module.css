@@ -1,9 +1,0 @@
-:root {
-  --landingHeaderBackColor: #69696978;
-  --section2BackColor: #313131;
-}
-.Main {
-  overflow-y: auto;
-  overflow-x: hidden;
-  height: inherit;
-}
