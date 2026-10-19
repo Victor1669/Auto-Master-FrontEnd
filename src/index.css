@@ -3,3 +3,43 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+:root {
+  --bg: #0b0e12;
+  --surface: #12171d;
+  --field: rgba(255, 255, 255, 0.05);
+  --border: rgba(255, 255, 255, 0.08);
+  --text: #f4f6f8;
+  --muted: #9aa4ae;
+  --red: #f2002e;
+}
+
+[data-bs-theme="dark"] {
+  font-family:
+    "Inter",
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    sans-serif;
+  color: var(--text);
+  background-color: var(--bg);
+}
+
+.btn.btn-automaster {
+  --bs-btn-color: #fff;
+  --bs-btn-bg: var(--red);
+  --bs-btn-border-color: var(--red);
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #d10027;
+  --bs-btn-hover-border-color: #d10027;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #b50022;
+  --bs-btn-active-border-color: #b50022;
+  --bs-btn-disabled-color: #fff;
+  --bs-btn-disabled-bg: var(--red);
+  --bs-btn-disabled-border-color: var(--red);
+  --bs-btn-focus-shadow-rgb: 242, 0, 46;
+  --bs-btn-border-radius: 10px;
+  font-weight: 600;
+}

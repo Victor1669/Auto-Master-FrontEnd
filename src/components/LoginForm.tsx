@@ -10,6 +10,7 @@ import {
 import { Form, useActionData, useNavigation } from "react-router";
 
 import type { LoginActionData } from "../actions/auth";
+import styles from "./LoginForm.module.css";
 
 type LoginFormProps = {
   title: string;
@@ -27,7 +28,7 @@ export default function LoginForm({ title }: LoginFormProps) {
   const errors = actionData?.errors;
 
   return (
-    <Card className="auth-card">
+    <Card className={styles.card}>
       <Card.Body className="p-4">
         <Form method="post" className="d-grid gap-3">
           <div>
@@ -44,13 +45,14 @@ export default function LoginForm({ title }: LoginFormProps) {
           )}
 
           <BsForm.Group controlId={`${id}-email`}>
-            <InputGroup hasValidation>
-              <InputGroup.Text>
+            <InputGroup hasValidation className={styles.group}>
+              <InputGroup.Text className={styles.field}>
                 <i className="bi bi-envelope" />
               </InputGroup.Text>
               <BsForm.Control
                 type="email"
                 name="email"
+                className={`${styles.field} ${styles.control}`}
                 placeholder="E-mail"
                 aria-label="E-mail"
                 autoComplete="email"
@@ -65,13 +67,14 @@ export default function LoginForm({ title }: LoginFormProps) {
           </BsForm.Group>
 
           <BsForm.Group controlId={`${id}-password`}>
-            <InputGroup hasValidation>
-              <InputGroup.Text>
+            <InputGroup hasValidation className={styles.group}>
+              <InputGroup.Text className={styles.field}>
                 <i className="bi bi-lock" />
               </InputGroup.Text>
               <BsForm.Control
                 type={showPassword ? "text" : "password"}
                 name="password"
+                className={`${styles.field} ${styles.control}`}
                 placeholder="Senha"
                 aria-label="Senha"
                 autoComplete="current-password"
@@ -80,7 +83,7 @@ export default function LoginForm({ title }: LoginFormProps) {
               />
               <Button
                 type="button"
-                className="auth-toggle"
+                className={styles.toggle}
                 onClick={() => setShowPassword((value) => !value)}
                 aria-label={showPassword ? "Ocultar senha" : "Mostrar senha"}
               >
@@ -96,6 +99,7 @@ export default function LoginForm({ title }: LoginFormProps) {
 
           <BsForm.Check
             type="checkbox"
+            className={styles.check}
             id={`${id}-remember`}
             name="remember"
             label="Lembrar-me"
@@ -103,7 +107,7 @@ export default function LoginForm({ title }: LoginFormProps) {
 
           <Button
             type="submit"
-            className="btn-automaster"
+            className={`btn-automaster ${styles.submit}`}
             disabled={isSubmitting}
           >
             {isSubmitting ? (
@@ -117,7 +121,7 @@ export default function LoginForm({ title }: LoginFormProps) {
           <Button
             type="button"
             variant="link"
-            className="auth-link mx-auto p-0"
+            className={`${styles.link} mx-auto p-0`}
           >
             Esqueceu a senha?
           </Button>

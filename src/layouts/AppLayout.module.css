@@ -1,0 +1,43 @@
+.app {
+  display: flex;
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+.main {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  align-items: center;
+  gap: 16px;
+  height: 64px;
+  padding: 0 24px;
+  background: rgba(11, 14, 18, 0.92);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+}
+
+.content {
+  flex: 1;
+  width: 100%;
+}
+
+@media (min-width: 1200px) {
+  .topbar {
+    padding: 0 32px;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .content {
+    padding-bottom: calc(68px + env(safe-area-inset-bottom, 0px));
+  }
+}

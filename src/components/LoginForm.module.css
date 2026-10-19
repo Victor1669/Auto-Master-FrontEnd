@@ -1,0 +1,80 @@
+.card {
+  --bs-card-bg: rgba(15, 20, 26, 0.84);
+  --bs-card-border-color: var(--border);
+  --bs-card-border-radius: 16px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.card .field {
+  min-height: 48px;
+  color: var(--muted);
+  background-color: var(--field);
+  border-color: var(--border);
+}
+
+.card .control {
+  font-size: 0.9rem;
+  color: var(--text);
+}
+
+.card .control::placeholder {
+  color: var(--muted);
+}
+
+.card .control:focus {
+  color: var(--text);
+  background-color: var(--field);
+  box-shadow: none;
+}
+
+.card .control:global(.is-invalid) {
+  padding-right: 0.75rem;
+  background-image: none;
+}
+
+.toggle {
+  --bs-btn-color: var(--muted);
+  --bs-btn-bg: var(--field);
+  --bs-btn-border-color: var(--border);
+  --bs-btn-hover-color: var(--text);
+  --bs-btn-hover-bg: var(--field);
+  --bs-btn-hover-border-color: var(--border);
+  --bs-btn-active-color: var(--text);
+  --bs-btn-active-bg: var(--field);
+  --bs-btn-active-border-color: var(--border);
+  --bs-btn-focus-shadow-rgb: 242, 0, 46;
+  min-height: 48px;
+}
+
+.card .group:focus-within .field,
+.card .group:focus-within .toggle {
+  border-color: var(--red);
+}
+
+.check :global(.form-check-label) {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.check :global(.form-check-input:checked) {
+  background-color: var(--red);
+  border-color: var(--red);
+}
+
+.check :global(.form-check-input:focus) {
+  border-color: var(--red);
+  box-shadow: 0 0 0 0.25rem rgba(242, 0, 46, 0.25);
+}
+
+.submit {
+  min-height: 52px;
+}
+
+.link {
+  --bs-btn-color: var(--muted);
+  --bs-btn-hover-color: var(--text);
+  --bs-btn-active-color: var(--text);
+  --bs-btn-focus-shadow-rgb: 242, 0, 46;
+  font-size: 0.8rem;
+}

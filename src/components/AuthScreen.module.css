@@ -1,0 +1,59 @@
+.mobile {
+  min-height: 100vh;
+  min-height: 100dvh;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(11, 14, 18, 0.15) 0%,
+      rgba(11, 14, 18, 0) 45%,
+      rgba(11, 14, 18, 0.7) 100%
+    ),
+    url("../assets/hero-mobile.jpeg") center / cover no-repeat;
+}
+
+.login {
+  gap: 10px;
+}
+
+.logo {
+  width: min(76vw, 250px);
+}
+
+.login .logo {
+  width: min(58vw, 230px);
+}
+
+.body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  width: 100%;
+  max-width: 420px;
+}
+
+.login .body {
+  margin-top: 16px;
+}
+
+.desktop {
+  min-height: 100vh;
+  background:
+    linear-gradient(90deg, rgba(11, 14, 18, 0.55) 0%, rgba(11, 14, 18, 0) 55%),
+    url("../assets/hero-desktop.jpeg") left center / cover no-repeat;
+}
+
+.desktopRow {
+  min-height: calc(100vh - 6rem);
+}
+
+.desktopLogo {
+  width: clamp(300px, 30vw, 440px);
+}
+
+.desktopTagline {
+  max-width: 13em;
+  margin: 20px 0 0;
+  font-size: clamp(1.4rem, 2.2vw, 1.9rem);
+  font-weight: 500;
+  line-height: 1.3;
+}

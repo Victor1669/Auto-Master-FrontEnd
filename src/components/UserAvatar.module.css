@@ -1,0 +1,20 @@
+.avatar {
+  display: inline-grid;
+  flex: 0 0 auto;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #fff;
+  object-fit: cover;
+  background: linear-gradient(135deg, #2c3540, #1a2028);
+  border: 1px solid var(--border);
+  border-radius: 50%;
+}
+
+.lg {
+  width: 52px;
+  height: 52px;
+  font-size: 1.05rem;
+}

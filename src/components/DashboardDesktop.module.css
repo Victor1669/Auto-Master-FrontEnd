@@ -1,0 +1,169 @@
+.dashboard {
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 28px 24px 40px;
+}
+
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.titleIcon {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.title h1 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.date {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 2px 0 0;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.newButton {
+  --bs-btn-padding-y: 0.55rem;
+  --bs-btn-padding-x: 1rem;
+  --bs-btn-font-size: 0.88rem;
+  white-space: nowrap;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.sectionTitle {
+  margin: 0 0 12px;
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.agenda {
+  overflow: hidden;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+}
+
+.agenda .table {
+  --bs-table-bg: transparent;
+  --bs-table-color: var(--text);
+  --bs-table-border-color: var(--border);
+  margin: 0;
+  font-size: 0.85rem;
+}
+
+.agenda .table th,
+.agenda .table td {
+  padding: 14px 12px;
+  vertical-align: middle;
+  border-bottom: 1px solid var(--border);
+}
+
+.agenda .table th {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--muted);
+  white-space: nowrap;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.agenda .table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.time {
+  font-weight: 600;
+}
+
+.plate {
+  display: block;
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+.viewButton {
+  display: inline-block;
+  padding: 0.25rem 0.9rem;
+  font-size: 0.78rem;
+  color: var(--text);
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 6px;
+}
+
+.viewButton:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.empty {
+  margin: 0;
+  padding: 32px 16px;
+  text-align: center;
+  color: var(--muted);
+  border-top: 1px solid var(--border);
+}
+
+.em_andamento {
+  --badge-bg: #1565c0;
+}
+
+.aguardando_pecas {
+  --badge-bg: #b45309;
+}
+
+.agendado {
+  --badge-bg: #15803d;
+}
+
+.concluido {
+  --badge-bg: #475569;
+}
+
+@media (min-width: 1200px) {
+  .dashboard {
+    padding: 32px 32px 48px;
+  }
+
+  .stats {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .agenda .table th,
+  .agenda .table td {
+    padding-inline: 16px;
+  }
+
+  .plate {
+    display: inline;
+    font-size: inherit;
+    color: inherit;
+  }
+
+  .plate::before {
+    content: " - ";
+  }
+}

@@ -1,0 +1,153 @@
+.dashboard {
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 20px 16px 24px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.header p {
+  margin: 0;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.title {
+  margin: 0 0 12px;
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.tabs {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.tab {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  min-height: 52px;
+  padding: 8px 6px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  line-height: 1.15;
+  text-align: center;
+  color: var(--muted);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+
+.tab[aria-selected="true"] {
+  color: #fff;
+  background: var(--red);
+  border-color: var(--red);
+}
+
+.count {
+  font-size: 0.7rem;
+  opacity: 0.85;
+}
+
+.empty {
+  padding: 32px 16px;
+  text-align: center;
+  color: var(--muted);
+}
+
+.list {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.card {
+  --badge-radius: 999px;
+  display: flex;
+  align-items: stretch;
+  gap: 12px;
+  height: 100%;
+  padding: 16px;
+  color: inherit;
+  text-decoration: none;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+}
+
+.card:hover {
+  color: inherit;
+  background: #181e26;
+}
+
+.main {
+  flex: 1;
+  min-width: 0;
+}
+
+.code {
+  font-size: 1.05rem;
+}
+
+.info {
+  margin: 4px 0 0;
+  font-size: 0.82rem;
+  color: #c3ccd5;
+}
+
+.side {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+  color: var(--muted);
+}
+
+.em_andamento {
+  --badge-bg: var(--red);
+}
+
+.aguardando_pecas {
+  --badge-bg: #e8890c;
+}
+
+.concluida {
+  --badge-bg: #15803d;
+}
+
+@media (min-width: 768px) {
+  .dashboard {
+    padding: 32px 24px 28px;
+  }
+
+  .list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

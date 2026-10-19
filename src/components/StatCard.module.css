@@ -1,0 +1,83 @@
+.card {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-areas:
+    "icon value"
+    "icon label";
+  align-items: center;
+  column-gap: 14px;
+  padding: 18px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+}
+
+.icon {
+  display: grid;
+  grid-area: icon;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  font-size: 1.25rem;
+  color: var(--tone);
+  background: color-mix(in srgb, var(--tone) 15%, transparent);
+  border-radius: 50%;
+}
+
+.value {
+  grid-area: value;
+  align-self: end;
+  font-size: 1.9rem;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.label {
+  grid-area: label;
+  align-self: start;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.blue {
+  --tone: #5aa9ff;
+}
+
+.cyan {
+  --tone: #38bdf8;
+}
+
+.orange {
+  --tone: #fb923c;
+}
+
+.green {
+  --tone: #34d399;
+}
+
+.red {
+  --tone: #ff4d6d;
+}
+
+.stacked {
+  grid-template-areas:
+    "icon value"
+    "label label";
+  row-gap: 12px;
+  padding: 14px;
+}
+
+.stacked .icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+}
+
+.stacked .value {
+  align-self: center;
+  font-size: 2rem;
+}
+
+.stacked .label {
+  font-size: 0.82rem;
+}
