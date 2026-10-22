@@ -15,7 +15,7 @@ type AgendaParams = {
   query: string;
 };
 
-function normalize(value: string) {
+export function normalize(value: string) {
   return value
     .normalize("NFD")
     .replace(/[\u0300-\u036f]/g, "")

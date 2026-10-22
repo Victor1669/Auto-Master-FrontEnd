@@ -4,7 +4,13 @@ import { Form, useLocation, useSearchParams, useSubmit } from "react-router";
 
 import styles from "./SearchBar.module.css";
 
-export default function SearchBar() {
+type SearchBarProps = {
+  placeholder?: string;
+};
+
+export default function SearchBar({
+  placeholder = "Pesquisar cliente, veículo, placa...",
+}: SearchBarProps) {
   const { pathname } = useLocation();
   const [searchParams] = useSearchParams();
   const submit = useSubmit();
@@ -36,7 +42,7 @@ export default function SearchBar() {
         type="search"
         name="q"
         className={styles.input}
-        placeholder="Pesquisar cliente, veículo, placa..."
+        placeholder={placeholder}
         aria-label="Pesquisar cliente, veículo, placa ou serviço"
         autoComplete="off"
         defaultValue={searchParams.get("q") ?? ""}

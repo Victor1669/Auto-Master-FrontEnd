@@ -1,0 +1,68 @@
+.header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.back {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  font-size: 1.1rem;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.search {
+  margin-bottom: 16px;
+}
+
+.search form {
+  max-width: none;
+}
+
+.search input {
+  height: 44px;
+  border-radius: 10px;
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 16px 12px 12px;
+  color: var(--muted);
+  text-decoration: none;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+}
+
+.card:hover {
+  color: var(--muted);
+  background: #181e26;
+}
+
+.info {
+  flex: 1;
+  min-width: 0;
+  color: var(--text);
+}
+
+.info strong {
+  font-size: 1rem;
+}
+
+.info p {
+  margin: 2px 0 0;
+  font-size: 0.82rem;
+  color: #c3ccd5;
+}

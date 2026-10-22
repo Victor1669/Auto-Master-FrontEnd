@@ -6,6 +6,7 @@ import RootLayout from "./layouts/RootLayout";
 import { appLoader } from "./loaders/app";
 import { guestLoader, logoutLoader } from "./loaders/auth";
 import { dashboardLoader } from "./loaders/dashboard";
+import { vehiclesLoader } from "./loaders/vehicles";
 import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
 
@@ -45,6 +46,14 @@ export const router = createBrowserRouter([
             lazy: async () => {
               const { default: Dashboard } = await import("./pages/Dashboard");
               return { Component: Dashboard };
+            },
+          },
+          {
+            path: "veiculos",
+            loader: vehiclesLoader,
+            lazy: async () => {
+              const { default: Vehicles } = await import("./pages/Vehicles");
+              return { Component: Vehicles };
             },
           },
         ],

@@ -1,0 +1,19 @@
+.thumb {
+  display: inline-grid;
+  flex: 0 0 auto;
+  place-items: center;
+  width: 72px;
+  height: 44px;
+  font-size: 1.5rem;
+  color: var(--muted);
+  object-fit: cover;
+  background: linear-gradient(135deg, #2c3540, #1a2028);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.lg {
+  width: 88px;
+  height: 56px;
+  font-size: 1.8rem;
+}
